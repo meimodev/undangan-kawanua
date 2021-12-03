@@ -2,7 +2,8 @@
 import {initializeApp} from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 // https://firebase.google.com/docs/web/setup#available-libraries
-import {getFirestore} from 'firebase/firestore/lite';
+import {getFirestore, getDoc, doc} from 'firebase/firestore/lite';
+
 
 const init = () => {
     const firebaseConfig = {
@@ -22,4 +23,10 @@ const init = () => {
 export const firestore = () => {
     const app = init();
     return getFirestore(app);
+};
+
+export const firestoreGetDocData = async (path) => {
+    const docRef = doc(getFirestore(init()), path);
+    const docSnap = await getDoc(docRef);
+    return docSnap.data();
 };
