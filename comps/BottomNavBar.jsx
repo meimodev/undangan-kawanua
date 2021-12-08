@@ -5,9 +5,8 @@ const BottomNavBar = ({music, links}) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isPlaying, setIsPlaying] = useState(true);
 
-
     return (
-        <div className="fixed bottom-5 left-0 right-0 z-20  mx-2">
+        <div className="fixed bottom-5 left-0 right-0 z-40  mx-2">
             <div className={isOpen ? "animate-fade-in-bottom" : "hidden"}>
                 <div
                     onClick={() => setIsOpen(false)}
@@ -17,16 +16,14 @@ const BottomNavBar = ({music, links}) => {
                     className="bg-white mb-2 border-gray-500 border rounded-md ml-auto font-light text-sm items-stretch">
                     {links.map((e, index) => (
                         <Link href={e.href} key={index}>
-                            <a className="flex py-2 px-4 justify-end">
-                                {e.title}
-                            </a>
+                            <a className="flex py-2 px-4 justify-end">{e.title}</a>
                         </Link>
                     ))}
-
                 </div>
             </div>
 
-            <div className="border  shadow-lg  rounded-md border-gray-400 font-light text-sm flex flex-row gap-2">
+            <div
+                className="border bg-white shadow-lg  rounded-md border-gray-400 font-light text-sm flex flex-row gap-2">
                 <button onClick={() => setIsPlaying(!isPlaying)} className=" p-3">
                     {isPlaying ? (
                         <i className="las text-3xl text-center la-pause-circle animate-fade-in-fwd"/>

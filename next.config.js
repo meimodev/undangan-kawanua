@@ -10,4 +10,7 @@ module.exports = {
         appId: "1:666692868951:web:820449afe1de0ea2433c12",
         measurementId: "G-EYCH3EN78X"
     },
+    images: {
+        domains: ['i.ibb.co']
+    }
 };
