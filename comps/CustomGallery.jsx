@@ -2,40 +2,48 @@
 import "photoswipe/dist/photoswipe.css";
 import "photoswipe/dist/default-skin/default-skin.css";
 import {Gallery, Item} from "react-photoswipe-gallery";
+import PropTypes from "prop-types";
 
-const CustomGallery = ({images}) => {
+const CustomGallery = ({images, isTitleDisabled}) => {
     if (!images) {
         return <div/>;
     }
 
     return (
         <div>
-            <div className="text-center">Gallery</div>
+            {isTitleDisabled ? null : <div className="text-center">Gallery</div>}
             <div className="grid grid-cols-2 gap-1">
-                <Gallery>
-                    {images.map((e, index) => {
+                <Gallery options={{modal: false, loop: false, pinchToClose: false}}>
+                    {images.map((e, idx) => {
                         if (e.src === "divider") {
                             return e.divider;
                         }
 
+                        // noinspection JSValidateTypes
                         return (
                             <Item
-                                key={index}
+                                key={idx}
                                 original={e.src}
                                 thumbnail={e.thumbnail}
-                                width={e.width}
-                                height={e.height}
+                                width={e.oriWidth}
+                                height={e.oriHeight}
                             >
                                 {({ref, open}) => (
-                                    <img
-                                        key={index}
-                                        className=" w-full"
-                                        ref={ref}
-                                        height="128"
-                                        onClick={open}
-                                        src={e.thumbnail ? e.thumbnail : e.src}
-                                        alt={e.alt ? e.alt : "images " + index}
-                                    />
+                                    <div>
+                                        {e.hide ? (
+                                            <div className="w-0 h-0" ref={ref} key={idx}></div>
+                                        ) : (
+                                            <img
+                                                key={idx}
+                                                className="w-full"
+                                                ref={ref}
+                                                height={e.thumbnailHeight}
+                                                onClick={open}
+                                                src={e.thumbnail ? e.thumbnail : e.src}
+                                                alt={e.alt ? e.alt : "images " + idx}
+                                            />
+                                        )}
+                                    </div>
                                 )}
                             </Item>
                         );
@@ -44,5 +52,10 @@ const CustomGallery = ({images}) => {
             </div>
         </div>
     );
+};
+
+CustomGallery.propsType = {
+    images: PropTypes.array,
+    isTitleDisabled: PropTypes.bool,
 };
 export default CustomGallery;

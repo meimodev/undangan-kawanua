@@ -1,29 +1,40 @@
 /* eslint-disable @next/next/no-img-element */
-const FooterItem = ({icon, title}) => (
-    <div className="flex gap-1 ">
-        <div>{icon}</div>
-        <p>{title}</p>
-    </div>
-);
+import PropTypes from "prop-types";
 
-const Footer = ({menuPadding}) => {
+const Footer = ({isMenuPadding, isMinimalist}) => {
+    const FooterItem = ({icon, title}) => (
+        <div className="flex gap-1 ">
+            <div>{icon}</div>
+            <p>{title}</p>
+        </div>
+    );
+
     return (
-        <div className={(menuPadding ? "pb-24 " : "") + "pt-2 text-xs bg-gray-100"}>
+        <div className={(isMenuPadding ? "pb-24 " : "") + "pt-2 text-xs font-thin"}>
             <div className="text-center ">
-                <a href="#">
-                    <div className="flex gap-1 justify-center">
-                        <div className="self-end flex-none bg-red-400 w-8 h-8"/>
-                        <h5 className="self-end">
-                            &copy;2021
-                            <strong className="pl-1 font-bold text-black text-base">
+                <a
+                    href="https://www.undangankawanua.com"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <div className="flex gap-1 justify-center items-center">
+                        <div className="flex-none  w-8 h-5 ">
+                            <img src="/img/logo.png" alt="uk logo"/>
+                        </div>
+                        <h5 className=" ">
+                            &copy;{new Date().getFullYear()}
+                            <strong className="pl-1 font-medium text-black text-base">
                                 undangankawanua.com
                             </strong>
                         </h5>
                     </div>
                 </a>
             </div>
-            <div className="border border-gray-400 w-4/5 mx-auto my-2 h-0.5"/>
-            <div>
+            {isMinimalist ? null : (
+                <div className="border border-gray-400 w-4/5 mx-auto my-2 h-0.5"/>
+            )}
+
+            <div className={isMinimalist ? "hidden" : "block"}>
                 <div className="flex justify-around text-xs  gap-1">
                     <div>
                         <FooterItem
@@ -63,6 +74,11 @@ const Footer = ({menuPadding}) => {
             </div>
         </div>
     );
+};
+
+Footer.propTypes = {
+    isMenuPadding: PropTypes.bool,
+    isMinimalist: PropTypes.bool,
 };
 
 export default Footer;

@@ -1,106 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import Meta from "../Meta";
-import Image from "next/image";
 
-import CustomGallery from "../CustomGallery";
 import Wishes from "../Wishes";
 import BottomNavBar from "../BottomNavBar";
 import OpenInvitation from "../OpenInvitation";
-import Countdown from "../Countdown";
-import Photo from "../Photo";
 import Footer from "../Footer";
-
-const Top = () => {
-    return (
-        <div className="h-screen w-screen">
-            <Image
-                className="opacity-75"
-                src="https://i.ibb.co/zbwGh8N/image-3.jpg"
-                layout="fill"
-                alt="Cover Image"
-            />
-            <div className="absolute bottom-32 left-0 right-0 mt-10">
-                <div className="flex-row text-center">
-                    <div className="text-3xl">Jhon &amp; Manembo</div>
-                    <div className="mt-5">
-                        <Countdown/>
-                    </div>
-                    <div className="mt-10">
-                        <button
-                            className="border border-gray-400 p-4 rounded-md font-bold text-gray-300 bg-opacity-50 bg-gray-400">
-                            Save Date
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-const Quotes = ({quotes}) => {
-    return (
-        <div>
-            {quotes.map((e, idx) => (
-                <>
-                    <div key={idx} className="mx-9 my-5">
-                        <div className="flex gap-1">
-                            <p className="text-3xl">&quot;</p>
-                            <div>
-                                <p className="text-sm pt-2 text-justify">{e.quote}</p>
-                                <span className="text-xs">{e.author} </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="bg-red-200 mt-5 h-64">
-                        <Photo useDiv alt={"Image " + (idx + 1)} link={e.photo}/>
-                    </div>
-                </>
-            ))}
-        </div>
-    );
-};
-
-const Hosts = ({hosts}) => {
-    return (
-        <div>
-            {hosts.map((e, idx) => {
-                const align = (idx + 1) % 2 !== 0 ? "left" : "right";
-                return (
-                    <div
-                        key={idx}
-                        className={
-                            (align === "right" ? "ml-auto mr-4 " : "ml-4 mr-auto ") +
-                            " text-sm my-10 "
-                        }
-                    >
-                        <div className={`text-${align} font-bold text-2xl`}>
-                            {e.nickname}
-                        </div>
-                        <div
-                            className={
-                                (align === "right" ? "justify-end" : "justify-start") +
-                                " flex gap-3 mt-2"
-                            }
-                        >
-                            <div
-                                className={
-                                    (align === "right" ? "order-last" : "") +
-                                    " flex-none self-center  border border-gray-400 bg-blue-500 rounded-full w-24 h-24 "
-                                }
-                            />
-                            <div className={`order text-${align}`}>
-                                <p className="text-md font-medium">{e.name}</p>
-                                <div className="text-xs font-light">{e.desc}</div>
-                            </div>
-                        </div>
-                    </div>
-                );
-            })}
-        </div>
-    );
-};
+import Top from "../Top";
+import Quotes from "../Quotes";
+import Hosts from "../Hosts";
+import CustomGallery from "../CustomGallery";
+import {useState} from "react";
 
 const Invitation1 = () => {
+    const [isOpen, setIsOpen] = useState(false);
     return (
         <div>
             <Meta title="This is Invitation 1">
@@ -112,12 +24,18 @@ const Invitation1 = () => {
                 />
             </Meta>
             <div>
-                <OpenInvitation/>
+                <OpenInvitation
+                    isDefault
+                    onClickOpenInvitation={() => {
+                        setIsOpen(true);
+                    }}
+                />
                 <BottomNavBar
+                    isOpen={isOpen}
                     music={{
-                        title: "Some song Title",
-                        artist: "Jhonxzc",
-                        src: "https://something-something.com/thatsong.mp3",
+                        artist: "Westlife",
+                        title: "Beautiful in White",
+                        src: "https://dl.dropbox.com/s/hef6qkdizpr4fzs/Westlife%20-%20Beautiful%20in%20White%20%28320%20kbps%29.mp3?dl=1",
                     }}
                     links={[
                         {title: "Home", href: "#home"},
@@ -125,7 +43,10 @@ const Invitation1 = () => {
                         {title: "Something", href: "#about"},
                     ]}
                 />
-                <Top/>
+                <Top
+                    topImage="https://i.ibb.co/zbwGh8N/image-3.jpg"
+                    eventDate={"04/22/2022"}
+                />
                 <Quotes
                     quotes={[
                         {
@@ -242,7 +163,7 @@ const Invitation1 = () => {
                         },
                     ]}
                 />
-                <Footer menuPadding/>
+                <Footer isMenuPadding/>
             </div>
         </div>
     );

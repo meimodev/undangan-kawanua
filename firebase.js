@@ -2,8 +2,7 @@
 import {initializeApp} from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 // https://firebase.google.com/docs/web/setup#available-libraries
-import {getFirestore, getDoc, doc} from 'firebase/firestore/lite';
-
+import {getFirestore, getDoc, doc, updateDoc} from "firebase/firestore/lite";
 
 const init = () => {
     const firebaseConfig = {
@@ -16,7 +15,7 @@ const init = () => {
         measurementId: process.env.measurementId,
     };
 
-// const analytics = getAnalytics(app);
+    // const analytics = getAnalytics(app);
     return initializeApp(firebaseConfig);
 };
 
@@ -29,4 +28,10 @@ export const firestoreGetDocData = async (path) => {
     const docRef = doc(getFirestore(init()), path);
     const docSnap = await getDoc(docRef);
     return docSnap.data();
+};
+
+export const firestoreUpdateDocData = async (path, field, value) => {
+    const docRef = doc(getFirestore(init()), path);
+    const result = await updateDoc(docRef, field, value);
+    return result;
 };
