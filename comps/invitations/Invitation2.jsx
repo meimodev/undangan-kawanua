@@ -19,17 +19,15 @@ import {useEffect} from "react";
 import {firestoreGetDocData, firestoreUpdateDocData} from "../../firebase";
 import {useState} from "react";
 
-const NoRecepient = dynamic(() => import("../NoRecepient"));
-
 const Invitation2 = () => {
-	const {to} = useRouter().query;
+    const {to} = useRouter().query;
 
-	const handleOnMainClick = (e) => {
-		e.preventDefault();
-		window.open(
-			"https://calendar.google.com/calendar/render?action=TEMPLATE&text=Bayu%20-%20Egi%20Wedding&dates=20220202T080000Z/20220202T100000Z&details=Pemberkatan%20%20@GMIM%20Paulus%20Tounsaru%2016:00%20WITA,%20Resepsi%20%20@Pusgiat%20Tondano%2018:00%20WITA&location=Tondano&trp=true",
-			"_blank"
-		);
+    const handleOnMainClick = (e) => {
+        e.preventDefault();
+        window.open(
+            "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Bayu%20-%20Egi%20Wedding&dates=20220202T080000Z/20220202T100000Z&details=Pemberkatan%20%20@GMIM%20Paulus%20Tounsaru%2016:00%20WITA,%20Resepsi%20%20@Pusgiat%20Tondano%2018:00%20WITA&location=Tondano&trp=true",
+            "_blank"
+        );
 	};
 
 	const openLink = (url) => {
@@ -75,16 +73,16 @@ const Invitation2 = () => {
 			title="Bayu &amp; Egi Wedding | 2 Februari 2022"
 			image="https://i.ibb.co/27CTnXk/IMG-8537.jpg"
 		>
-			<link
-				rel="stylesheet"
-				href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
-			/>
-			<link rel="preconnect" href="https://fonts.googleapis.com"/>
-			<link
-				rel="preconnect"
-				href="https://fonts.gstatic.com"
-				crossOrigin={"true"}
-			/>
+            <link
+                rel="stylesheet"
+                href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+            />
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link
+                rel="preconnect"
+                href="https://fonts.gstatic.com"
+                crossOrigin={"true"}
+            />
 			<link
 				href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Meow+Script&display=swap"
 				rel="stylesheet"
@@ -123,38 +121,38 @@ const Invitation2 = () => {
 	];
 
 	return (
-		<div>
-			<_BuildHead/>
-			<div style={{fontFamily: "Josefin Sans"}}>
-				<OpenInvitation
-					builder={({onClose}) => {
-						return (
-							<div className="flex justify-center bg-transparent h-full">
-								<div className="self-center text-center p-6 rounded-lg">
-									<div
-										className="flex items-center justify-center"
-										style={{
-											backgroundImage:
-												"url(https://i.ibb.co/CKW5Qp7/web-top-1.png)",
-											backgroundRepeat: "no-repeat",
-											backgroundSize: "contain",
+        <div>
+            <_BuildHead/>
+            <div style={{fontFamily: "Josefin Sans"}}>
+                <OpenInvitation
+                    builder={({onClose}) => {
+                        return (
+                            <div className="flex justify-center bg-transparent h-full">
+                                <div className="self-center text-center p-6 rounded-lg">
+                                    <div
+                                        className="flex items-center justify-center"
+                                        style={{
+                                            backgroundImage:
+                                                "url(https://i.ibb.co/CKW5Qp7/web-top-1.png)",
+                                            backgroundRepeat: "no-repeat",
+                                            backgroundSize: "contain",
 											backgroundPosition: "center",
 											width: "600px",
 											height: "400px",
 											zIndex: "-10",
 										}}
 									>
-										<div style={{fontFamily: "Josefin Sans"}}>
-											<h3 className="text-md font-thin pt-10">Save The Date</h3>
-											<h3
-												className="text-purple-400 text-5xl"
-												style={{fontFamily: "Meow Script"}}
-											>
-												Bayu &amp; Regina
-											</h3>
-											<h3 className="text-xs text-purple-400 font-thin">
-												02 - Februari 2022
-											</h3>
+                                        <div style={{fontFamily: "Josefin Sans"}}>
+                                            <h3 className="text-md font-thin pt-10">Save The Date</h3>
+                                            <h3
+                                                className="text-purple-400 text-5xl"
+                                                style={{fontFamily: "Meow Script"}}
+                                            >
+                                                Bayu &amp; Regina
+                                            </h3>
+                                            <h3 className="text-xs text-purple-400 font-thin">
+                                                02 - Februari 2022
+                                            </h3>
 
 											<div className="pb-4"></div>
 
@@ -183,43 +181,43 @@ const Invitation2 = () => {
 					links={[]}
 				/>
 				<ReactFullpage
-					loopBottom
-					scrollOverflowReset={true}
-					scrollOverflow={true}
-					licenseKey="API_KEY"
-					render={({state, fullpageApi}) => {
-						return (
-							<ReactFullpage.Wrapper>
-								<div className="section px-4 ">
-									<Top eventDate={"04/22/2022"}>
-										<div className="absolute top-1/3 left-0 right-0 z-20">
-											<div className="flex items-center flex-col justify-end">
-												<h3
-													className="text-purple-400  text-6xl mb-8"
-													style={{fontFamily: "Meow Script"}}
-												>
+                    loopBottom
+                    scrollOverflowReset={true}
+                    scrollOverflow={true}
+                    licenseKey="API_KEY"
+                    render={({state, fullpageApi}) => {
+                        return (
+                            <ReactFullpage.Wrapper>
+                                <div className="section px-4 ">
+                                    <Top eventDate={"04/22/2022"}>
+                                        <div className="absolute top-1/3 left-0 right-0 z-20">
+                                            <div className="flex items-center flex-col justify-end">
+                                                <h3
+                                                    className="text-purple-400  text-6xl mb-8"
+                                                    style={{fontFamily: "Meow Script"}}
+                                                >
 													Bayu &amp; Egi
 												</h3>
 												<Countdown
-													eventDate={"02/02/2022"}
-													builder={({timeLeft}) => (
-														<div className="mb-10 font-thin">
-															<div className="flex gap-5 text-sm">
-																<div
-																	className="bg-transparent w-16 h-16 rounded-lg flex flex-col justify-center border-b-2 text-gray-500 bg-gray-100 bg-opacity-50 border-purple-400 items-center">
-																	<div>{timeLeft.days}</div>
-																	<div>Hari</div>
-																</div>
-																<div
-																	className="bg-transparent w-16 h-16 rounded-lg flex flex-col justify-center text-gray-500 bg-gray-100 bg-opacity-50  border-b-2 border-purple-400 items-center">
-																	<div>{timeLeft.hours}</div>
-																	<div>Jam</div>
-																</div>
-																<div
-																	className="bg-transparent w-16 h-16 rounded-lg flex flex-col justify-center text-gray-500 bg-gray-100 bg-opacity-50 border-b-2 border-purple-400 items-center">
-																	<div>{timeLeft.minutes}</div>
-																	<div>Menit</div>
-																</div>
+                                                    eventDate={"02/02/2022"}
+                                                    builder={({timeLeft}) => (
+                                                        <div className="mb-10 font-thin">
+                                                            <div className="flex gap-5 text-sm">
+                                                                <div
+                                                                    className="bg-transparent w-16 h-16 rounded-lg flex flex-col justify-center border-b-2 text-gray-500 bg-gray-100 bg-opacity-50 border-purple-400 items-center">
+                                                                    <div>{timeLeft.days}</div>
+                                                                    <div>Hari</div>
+                                                                </div>
+                                                                <div
+                                                                    className="bg-transparent w-16 h-16 rounded-lg flex flex-col justify-center text-gray-500 bg-gray-100 bg-opacity-50  border-b-2 border-purple-400 items-center">
+                                                                    <div>{timeLeft.hours}</div>
+                                                                    <div>Jam</div>
+                                                                </div>
+                                                                <div
+                                                                    className="bg-transparent w-16 h-16 rounded-lg flex flex-col justify-center text-gray-500 bg-gray-100 bg-opacity-50 border-b-2 border-purple-400 items-center">
+                                                                    <div>{timeLeft.minutes}</div>
+                                                                    <div>Menit</div>
+                                                                </div>
 															</div>
 														</div>
 													)}
@@ -269,11 +267,11 @@ const Invitation2 = () => {
 												name: "Yudhistira Arjuna Bayu Pratasik, S.Pd",
 												image: "https://i.ibb.co/F3qJg4M/Bayu-r.png",
 												desc: (
-													<p>
-														Putra Pertama
-														<br/> Bpk. Max Donald Pratasik
-														<br/> Ibu. Merlin Korengkeng
-													</p>
+                                                    <p>
+                                                        Putra Pertama
+                                                        <br/> Bpk. Max Donald Pratasik
+                                                        <br/> Ibu. Merlin Korengkeng
+                                                    </p>
 												),
 											},
 											{
@@ -281,11 +279,11 @@ const Invitation2 = () => {
 												name: "Regina Frida Valentine Kapojos, SM",
 												image: "https://i.ibb.co/Fbcf4yR/Egi-r.png",
 												desc: (
-													<p>
-														Putri Kedua
-														<br/> Bpk. Albert G. kapojos
-														<br/> Ibu. Shirley K. Korompis
-													</p>
+                                                    <p>
+                                                        Putri Kedua
+                                                        <br/> Bpk. Albert G. kapojos
+                                                        <br/> Ibu. Shirley K. Korompis
+                                                    </p>
 												),
 											},
 										]}
@@ -305,8 +303,8 @@ const Invitation2 = () => {
 																}
 															>
 																<div
-																	className={`text-${align} text-purple-400 text-5xl mx-3 my-4`}
-																	style={{fontFamily: "Meow Script"}}
+                                                                    className={`text-${align} text-purple-400 text-5xl mx-3 my-4`}
+                                                                    style={{fontFamily: "Meow Script"}}
 																>
 																	{e.nickname}
 																</div>
@@ -368,8 +366,8 @@ const Invitation2 = () => {
 												<div className="flex flex-col gap-12 text-center ">
 													<div>
 														<h2
-															className="text-4xl"
-															style={{fontFamily: "Meow Script"}}
+                                                            className="text-4xl"
+                                                            style={{fontFamily: "Meow Script"}}
 														>
 															Pemberkatan
 														</h2>
@@ -399,8 +397,8 @@ const Invitation2 = () => {
 
 													<div>
 														<h2
-															className="text-4xl"
-															style={{fontFamily: "Meow Script"}}
+                                                            className="text-4xl"
+                                                            style={{fontFamily: "Meow Script"}}
 														>
 															Resepsi
 														</h2>
@@ -725,10 +723,10 @@ const Invitation2 = () => {
 										<div className="w-full h-full flex flex-col justify-center">
 											<div className="mt-32 text-center">
 												<h1 className="text-5xl font-thin">Happy Wedding</h1>
-												<h1 className="text-xl mt-5 mb-5 font-thin">
-													Bayu &amp; Egi
-												</h1>
-												<Footer isMinimalist/>
+                                                <h1 className="text-xl mt-5 mb-5 font-thin">
+                                                    Bayu &amp; Egi
+                                                </h1>
+                                                <Footer isMinimalist/>
 											</div>
 										</div>
 									</div>
