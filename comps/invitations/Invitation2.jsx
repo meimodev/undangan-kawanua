@@ -143,16 +143,14 @@ const Invitation2 = () => {
                                         <div style={{fontFamily: "Josefin Sans"}}>
                                             <h3 className="text-md font-thin pt-10">Save The Date</h3>
                                             <h3
-                                                className="text-purple-400 text-5xl"
-                                                style={{fontFamily: "Meow Script"}}
-                                            >
-                                                Bayu &amp; Regina
-                                            </h3>
-                                            <h3 className="text-xs text-purple-400 font-thin">
-                                                02 - Februari 2022
-                                            </h3>
-
-											<div className="pb-4"></div>
+												className="text-purple-400 text-5xl"
+												style={{fontFamily: "Meow Script"}}
+											>
+												Bayu &amp; Regina
+											</h3>
+											<h3 className="text-xs text-purple-400 font-thin pb-4">
+												02 - Februari 2022
+											</h3>
 
 											<div className="text-md font-thin pb-2">{to}</div>
 
