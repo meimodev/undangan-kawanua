@@ -1,7 +1,7 @@
-import Invitation1 from "../../comps/invitations/Invitation1";
+import Invitation2 from "../../comps/invitations/Invitation2";
 
 const Test = () => {
-  return <Invitation1/>;
+  return <Invitation2/>;
 };
 
 export default Test;
