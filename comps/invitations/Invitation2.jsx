@@ -12,6 +12,7 @@ import {useRouter} from "next/router";
 import EventInfo from "../EventInfo";
 import Countdown from "../Countdown";
 
+import "../../styles/global.css";
 
 import {useEffect} from "react";
 import {firestoreGetDocData, firestoreUpdateDocData} from "../../firebase";
