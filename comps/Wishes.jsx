@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
 import dayjs from "dayjs";
 
-const Wishes = ({wishes, inviteeName, onNewWishes}) => {
+const Wishes = ({wishes, inviteeName, enable, onNewWishes}) => {
     const [name, setName] = useState("");
     const [message, setMessage] = useState("");
     // const [date, setDate] = useState("");
@@ -31,17 +31,21 @@ const Wishes = ({wishes, inviteeName, onNewWishes}) => {
 
         setName(inviteeName);
         checkIfNameAlreadyCommented();
-    }, [inviteeName, wishes]);
+    }, [inviteeName, wishes, enable]);
 
     const checkIfNameAlreadyCommented = () => {
-        const res = wishes.find((e) => e.from == inviteeName);
+        if (!enable) {
+            setCanSendMessage(false);
+            return;
+        }
+        const res = wishes.find((e) => e.from === inviteeName);
         if (res) {
             setCanSendMessage(false);
         }
     };
 
     return (
-        <div className="">
+        <div>
             {canSendMessage ? (
                 <div>
                     <div className="pt-10">
