@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import Meta from "../Meta";
 import Top from "../Top";
-import Quotes from "../Quotes";
 import Hosts from "../Hosts";
 import OpenInvitation from "../OpenInvitation";
 import BottomNavBar from "../BottomNavBar";
@@ -13,7 +12,6 @@ import {useRouter} from "next/router";
 import EventInfo from "../EventInfo";
 import Countdown from "../Countdown";
 
-import dynamic from "next/dynamic";
 
 import {useEffect} from "react";
 import {firestoreGetDocData, firestoreUpdateDocData} from "../../firebase";
