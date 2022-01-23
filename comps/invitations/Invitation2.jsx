@@ -523,7 +523,10 @@ const Invitation2 = () => {
                                                             >
                                                                 <div
                                                                     className={`text-${align} text-purple-400 text-5xl mx-3 my-4`}
-                                                                    style={{fontFamily: "Meow Script"}}
+                                                                    style={{
+                                                                        fontFamily: "Meow Script",
+                                                                        textAlign: `${align}`
+                                                                    }}
                                                                 >
                                                                     {e.nickname}
                                                                 </div>
