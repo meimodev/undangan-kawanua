@@ -230,16 +230,17 @@ export default function Landing() {
                     <div>
                         <div className="flex">
                             {/*<Screens/>*/}
-                            <div className="flex-1 justify-between">
-                                <a href="#" rel="noopener noreferrer" className=" ">
-                                    <Image
-                                        className=" bg-gray-700"
-                                        src="/img/logo-meimo-192.png"
+                            <div className="flex justify-between items-center my-2 gap-2">
+                                <a href="#" rel="noopener noreferrer" >
+                                    <img
+                                        className=""
+                                        src="/img/logo.png"
                                         alt="Nav logo"
                                         width="60"
-                                        height="60"
+                                        height="30"
                                     />
                                 </a>
+                                <span className="text-xs">undangankawanua.com</span>
                             </div>
                             <NavRow/>
                         </div>
@@ -406,7 +407,7 @@ export default function Landing() {
             </section>
 
             {/* SECTION SAMPLE */}
-            <SectionSample/>
+            {/*<SectionSample/>*/}
 
             {/* SECTION QUESTION */}
             <section id="question" className="mt-10 py-2 ">
@@ -476,11 +477,11 @@ export default function Landing() {
             <footer id="footer" className="mt-10 py-2 mb-5 bg-gray-200">
                 <SectionPadding>
                     <div className="flex justify-around text-xs py-2 gap-1">
-                        <div>
-                            <FooterItem
-                                title="Kompleks pasar bawah, Wawalintouan, Tondano."
-                                icon={<i className="las la-map self-start pt-0.5"/>}
-                            />
+                        <div className="flex flex-col items-start justify-center">
+                            {/*<FooterItem*/}
+                            {/*    title="Kompleks pasar bawah, Wawalintouan, Tondano."*/}
+                            {/*    icon={<i className="las la-map self-start pt-0.5"/>}*/}
+                            {/*/>*/}
 
                             <FooterItem
                                 title="+62 895 2569 9078 (WA, Telegram)"
@@ -499,13 +500,15 @@ export default function Landing() {
                         </div>
                         <div className="self-center">
                             <div className="text-center">
-                                With <span className="text-red-400 text-md">♥</span>
+                                With<span className="text-red-400 text-m mx-1">♥</span>
                                 {new Date().getFullYear()}
                                 <a target="_blank" href="https://meimodev.com" rel="noreferrer">
                                     <img
                                         src="/img/logo-meimo.png"
                                         alt="meimo logo"
-                                        className="mt-1 w-20 h-10 ml-auto px-2 py-1 mr-auto bg-gray-500 rounded-md"
+                                        width="90"
+                                        height="20"
+                                        className="mt-1 opacity-50 ml-auto px-2 py-1 mr-auto bg-gray-500 rounded-md"
                                     />
                                 </a>
                             </div>
