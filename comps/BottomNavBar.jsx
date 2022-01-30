@@ -2,7 +2,7 @@ import {useState, useEffect, useRef} from "react";
 import Link from "next/link";
 import {Howl} from "howler";
 
-const BottomNavBar = ({music, links, isOpen}) => {
+const BottomNavBar = ({music, links, isOpen, className}) => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -54,7 +54,7 @@ const BottomNavBar = ({music, links, isOpen}) => {
     };
 
     return (
-        <div className="fixed -bottom-1 left-0 right-0 z-40  mx-2">
+        <div className={className}>
             <div className={isNavOpen ? "animate-fade-in-bottom" : "hidden"}>
                 <div
                     onClick={() => setIsNavOpen(false)}
@@ -71,7 +71,7 @@ const BottomNavBar = ({music, links, isOpen}) => {
             </div>
 
             <div
-                className="border bg-white shadow-lg  rounded-md border-gray-400 font-light text-sm flex flex-row gap-2 p-1">
+                className="border bg-white shadow-lg bg-opacity-50 rounded-md border-gray-400 font-light text-sm flex flex-row gap-2 p-1">
                 <button ref={playButton} onClick={handleAudioPlayPause} className="">
                     {isPlaying ? (
                         <i className="las text-3xl text-center la-pause-circle animate-fade-in-fwd"/>

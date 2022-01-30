@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const Top = ({eventDate, topImage, children}) => {
 	return (
-		<div>
+		<div className="h-full w-full">
 			{children ? (
 				children
 			) : (
