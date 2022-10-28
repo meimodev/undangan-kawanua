@@ -88,229 +88,74 @@ const CelineRuntu = () => {
 				crossOrigin={"true"}
 			/>
 			<link
-				href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Meow+Script&display=swap"
+				href="https://fonts.googleapis.com/css2?family=Montez&family=Zen+Maru+Gothic:wght@400;700&display=swap"
 				rel="stylesheet"
 			/>
 		</Meta>
 	);
 
+	const primaryFontFamily = { fontFamily: "Montez" };
+	const secondaryFontFamily = { fontFamily: "Zen Maru Gothic" };
+
 	const imageList = [
-		// "https://i.ibb.co/hLnJqKF/IMG-8393.jpg 3648x5472",
-		// "https://i.ibb.co/D1x0CVn/IMG-8427.jpg 3457x5185",
-		// "https://i.ibb.co/Fxg4Q6S/IMG-8523.jpg 3000x4500",
-		// "https://i.ibb.co/8Bt4RN7/IMG-8623.jpg 3585x5377",
-		"https://i.ibb.co/JBvDxjV/IMG-8377.jpg 5009x3339",
-		"https://i.ibb.co/6BXyCFJ/IMG-8400.jpg 3648x5472",
-		"https://i.ibb.co/7jCmwpr/IMG-8454.jpg 3648x5472",
-		"https://i.ibb.co/6tx2gJ7/IMG-8456.jpg 3515x5272",
-		"https://i.ibb.co/1J8Z7GK/IMG-8458.jpg 3648x5472",
-		"https://i.ibb.co/jfP2W7s/IMG-8461.jpg 3648x5472",
-		"https://i.ibb.co/S3m37FB/IMG-8464.jpg 5472x3648",
-		"https://i.ibb.co/c1BF1tv/IMG-8476-r.jpg 5472x3648",
-		"https://i.ibb.co/3v98g1M/IMG-8478-r.jpg 5472x3648",
-		"https://i.ibb.co/DKQdBgM/IMG-8505.jpg 3648x5472",
-		"https://i.ibb.co/Qd6XGT6/IMG-8507.jpg 3648x5472",
-		"https://i.ibb.co/BrzP7S5/IMG-8525.jpg 3300x4950",
-		"https://i.ibb.co/27CTnXk/IMG-8537.jpg 3648x5472",
-		"https://i.ibb.co/Z2X35ND/IMG-8550.jpg 3648x5472",
-		"https://i.ibb.co/x2BTD4Q/IMG-8560.jpg 4935x3290",
-		"https://i.ibb.co/qkQWkJm/IMG-8620.jpg 3648x5472",
-		"https://i.ibb.co/Qv17SLr/IMG-8639.jpg 3300x4950",
-		"https://i.ibb.co/bbFVpPd/IMG-8646.jpg 3648x5472",
-		"https://i.ibb.co/H2CndjC/IMG-8648.jpg 3648x5472",
-		"https://i.ibb.co/Bcy289H/IMG-8651.jpg 3537x5303",
-		"https://i.ibb.co/fpnnn9N/IMG-8653.jpg 3445x5167",
-		"https://i.ibb.co/28drHGs/IMG-8655.jpg 3648x5472",
-		"https://i.ibb.co/VC6rr6k/IMG-8659.jpg 3648x5472",
+		"https://i.ibb.co/1KLXNLH/celine-runtu-1.jpg",
+		"https://i.ibb.co/NNCBTrL/celine-runtu-2.jpg",
+		"https://i.ibb.co/fvdRh1D/celine-runtu-3.jpg",
+		"https://i.ibb.co/ZxWBC0m/celine-runtu-4.jpg",
+		"https://i.ibb.co/4PzkLBR/celine-runtu-5.jpg",
+		"https://i.ibb.co/VmX5Lxx/celine-runtu-6.jpg",
+		"https://i.ibb.co/Bw91XcM/celine-runtu-7.jpg",
+		"https://i.ibb.co/n68LLxx/celine-runtu-8.jpg",
+		"https://i.ibb.co/2S1p0XQ/celine-runtu-9.jpg",
+		"https://i.ibb.co/f0WY2Zy/celine-runtu-10.jpg",
+		"https://i.ibb.co/XSxTbQj/celine-runtu-11.jpg",
+		"https://i.ibb.co/Q9MKYcF/celine-runtu-12.jpg",
+		"https://i.ibb.co/2PRJr4m/celine-runtu-13.jpg",
+		"https://i.ibb.co/c1Bfm63/celine-runtu-14.jpg",
+		"https://i.ibb.co/k2s4QN8/celine-runtu-15.jpg",
+		"https://i.ibb.co/ZJ3FNDc/celine-runtu-16.jpg",
+		"https://i.ibb.co/RQCCtN6/celine-runtu-17.jpg",
 	];
 
 	const galleryHead = [
 		{
-			src: "https://i.ibb.co/Fxg4Q6S/IMG-8523.jpg",
+			src: imageList[0],
 			thumbnail: "",
 			thumbnailHeight: "128",
-			oriWidth: "3000",
-			oriHeight: "4500",
+			oriWidth: "3024",
+			oriHeight: "4032",
 		},
 		{
-			src: "https://i.ibb.co/hLnJqKF/IMG-8393.jpg",
+			src: imageList[12],
 			thumbnail: "",
 			thumbnailHeight: "128",
-			oriWidth: "3648",
-			oriHeight: "5472",
+			oriWidth: "3024",
+			oriHeight: "4032",
 		},
 		{
-			src: "https://i.ibb.co/8Bt4RN7/IMG-8623.jpg",
+			src: imageList[1],
 			thumbnail: "",
 			thumbnailHeight: "128",
-			oriWidth: "3585",
-			oriHeight: "5377",
+			oriWidth: "3024",
+			oriHeight: "4032",
 		},
 		{
-			src: "https://i.ibb.co/D1x0CVn/IMG-8427.jpg",
+			src: imageList[3],
 			thumbnail: "",
 			thumbnailHeight: "128",
-			oriWidth: "3457",
-			oriHeight: "5185",
+			oriWidth: "3024",
+			oriHeight: "4032",
 		},
 	];
-	const galleryBody = [
-		{
-			src: "https://i.ibb.co/Bcy289H/IMG-8651.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3537",
-			oriHeight: "5303",
-		},
-		{
-			src: "https://i.ibb.co/S3m37FB/IMG-8464.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "5472",
-			oriHeight: "3648",
-		},
-		{
-			src: "https://i.ibb.co/c1BF1tv/IMG-8476-r.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "5472",
-			oriHeight: "3648",
-		},
-		{
-			src: "https://i.ibb.co/Z2X35ND/IMG-8550.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3648",
-			oriHeight: "5472",
-		},
-		{
-			src: "https://i.ibb.co/DKQdBgM/IMG-8505.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3648",
-			oriHeight: "5472",
-		},
-		{
-			src: "https://i.ibb.co/H2CndjC/IMG-8648.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3648",
-			oriHeight: "5472",
-		},
-		{
-			src: "https://i.ibb.co/BrzP7S5/IMG-8525.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3300",
-			oriHeight: "4950",
-		},
-		{
-			src: "https://i.ibb.co/1J8Z7GK/IMG-8458.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3648",
-			oriHeight: "5472",
-		},
-		{
-			src: "https://i.ibb.co/Qd6XGT6/IMG-8507.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3648",
-			oriHeight: "5472",
-		},
-		{
-			src: "https://i.ibb.co/bbFVpPd/IMG-8646.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3648",
-			oriHeight: "5472",
-		},
-		{
-			src: "https://i.ibb.co/fpnnn9N/IMG-8653.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3445",
-			oriHeight: "5167",
-		},
-		{
-			src: "https://i.ibb.co/6tx2gJ7/IMG-8456.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3515",
-			oriHeight: "5272",
-		},
+	const galleryBody = imageList.map((e) => ({
+		src: e,
+		thumbnail: "",
+		hide: true,
+		oriWidth: "3024",
+		oriHeight: "4032",
+	}));
 
-		{
-			src: "https://i.ibb.co/x2BTD4Q/IMG-8560.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "4935",
-			oriHeight: "3290",
-		},
-		{
-			src: "https://i.ibb.co/JBvDxjV/IMG-8377.jpg",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "5009",
-			oriHeight: "3339",
-		},
-		{
-			src: "https://i.ibb.co/27CTnXk/IMG-8537.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3648",
-			oriHeight: "5472",
-		},
-		{
-			src: "https://i.ibb.co/6BXyCFJ/IMG-8400.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3648",
-			oriHeight: "5472",
-		},
-
-		{
-			src: "https://i.ibb.co/3v98g1M/IMG-8478-r.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "5472",
-			oriHeight: "3648",
-		},
-		{
-			src: "https://i.ibb.co/jfP2W7s/IMG-8461.jpg ",
-			thumbnail: "",
-			oriWidth: "3648",
-			hide: true,
-			oriHeight: "5472",
-		},
-		{
-			src: "https://i.ibb.co/Qv17SLr/IMG-8639.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3300",
-			oriHeight: "4950",
-		},
-		{
-			src: "https://i.ibb.co/7jCmwpr/IMG-8454.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3648",
-			oriHeight: "5472",
-		},
-		{
-			src: "https://i.ibb.co/VC6rr6k/IMG-8659.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3648",
-			oriHeight: "5472",
-		},
-		{
-			src: "https://i.ibb.co/28drHGs/IMG-8655.jpg ",
-			thumbnail: "",
-			hide: true,
-			oriWidth: "3648",
-			oriHeight: "5472",
-		},
+	const bboldButton = [
 		{
 			src: "divider",
 			divider: (
@@ -324,19 +169,23 @@ const CelineRuntu = () => {
 					>
 						<div className="flex gap-2 items-baseline">
 							<div className="las la-gift text-lg"></div>
-							<span>Gift photos with bbold™ 15% off</span>
+							<span>Gift photos with bbold™ 10% off</span>
 						</div>
 					</button>
 				</div>
 			),
 		},
 	];
-	const galleryPhotos = [...galleryHead, ...galleryBody];
+
+	const galleryPhotos = [...galleryHead, ...galleryBody, ...bboldButton];
 
 	return (
 		<div>
 			<_BuildHead />
-			<div style={{ fontFamily: "Josefin Sans" }} className="cursor-default">
+			<div
+				style={secondaryFontFamily}
+				className="cursor-default overflow-hidden"
+			>
 				{/* <OpenInvitation
 					onClickOpenInvitation={() => {
 						setIsOpen(true);
@@ -388,24 +237,15 @@ const CelineRuntu = () => {
 						);
 					}}
 				/> */}
-				<BottomNavBar
-					isOpen={isOpen}
-					music={{
-						artist: music[0],
-						title: music[1],
-						src: music[2],
-					}}
-					links={[]}
-				/>
-				<div className="mx-auto max-w-xl">
-					<div className="h-screen min-h-screen section" id="top">
+				<div className="max-w-lg mx-auto">
+					<div className="min-h-screen h-screen section" id="top">
 						<Top
 							eventDate={"12/12/2022"}
 							className="h-full flex items-center flex-col justify-center"
 						>
 							<h3
-								className="text-purple-400 text-center text-6xl mb-8"
-								style={{ fontFamily: "" }}
+								className="text-rose-400 text-center text-6xl mb-8"
+								style={primaryFontFamily}
 							>
 								Celine Gracella Runtu
 							</h3>
@@ -465,16 +305,13 @@ const CelineRuntu = () => {
 						</Top>
 					</div>
 
-					<div className=" section px-4 " id="event">
+					<div className="section px-4 " id="event">
 						<EventInfo
 							builder={() => (
 								<div>
 									<div className="flex flex-col gap-12 text-center ">
 										<div>
-											<h2
-												className="text-4xl"
-												style={{ fontFamily: "Meow Script" }}
-											>
+											<h2 className="text-4xl" style={primaryFontFamily}>
 												Ibadah Baptisan &amp; Ibadah Anak
 											</h2>
 											<i className="las la-glass-cheers text-7xl text-purple-400"></i>
@@ -595,6 +432,15 @@ const CelineRuntu = () => {
 						/> */}
 					</div>
 				</div>
+				<BottomNavBar
+					isOpen={isOpen}
+					music={{
+						artist: music[0],
+						title: music[1],
+						src: music[2],
+					}}
+					links={[]}
+				/>
 			</div>
 		</div>
 	);
