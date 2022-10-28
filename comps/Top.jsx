@@ -3,9 +3,9 @@ import Countdown from "./Countdown";
 import Image from "next/image";
 import PropTypes from "prop-types";
 
-const Top = ({eventDate, topImage, children}) => {
+const Top = ({ eventDate, topImage, className, children }) => {
 	return (
-		<div>
+		<div className={className}>
 			{children ? (
 				children
 			) : (
@@ -20,11 +20,10 @@ const Top = ({eventDate, topImage, children}) => {
 						<div className="flex-row text-center">
 							<div className="text-3xl">Jhon &amp; Manembo</div>
 							<div className="mt-5">
-								<Countdown eventDate={eventDate}/>
+								<Countdown eventDate={eventDate} />
 							</div>
 							<div className="mt-10">
-								<button
-									className="border border-gray-400 p-4 rounded-md font-bold text-gray-300 bg-opacity-50 bg-gray-400">
+								<button className="border border-gray-400 p-4 rounded-md font-bold text-gray-300 bg-opacity-50 bg-gray-400">
 									Save Date
 								</button>
 							</div>
