@@ -238,18 +238,27 @@ const CelineRuntu = () => {
 					}}
 				/> */}
 				<div className="max-w-lg mx-auto">
-					<div className="min-h-screen h-screen section" id="top">
+					<div className="min-h-screen h-screen section " id="top">
 						<Top
 							eventDate={"12/12/2022"}
 							className="h-full flex items-center flex-col justify-center"
 						>
 							<h3
-								className="text-rose-400 text-center text-6xl mb-8"
+								className="text-rose-400 text-center text-2xl mb-4"
+								style={primaryFontFamily}
+							>
+								Ibadah Baptisan <br /> <span className="text-lg">dan</span>{" "}
+								<br /> Ulang Tahun
+							</h3>
+							<h3
+								className="text-rose-400 text-center text-4xl mb-8 font-bold"
 								style={primaryFontFamily}
 							>
 								Celine Gracella Runtu
 							</h3>
-							<Countdown
+							<div className="bg-[url('/img/test/top/photo.png')]  w-24 h-36 bg-cover "></div>
+
+							{/* <Countdown
 								eventDate={"11/06/2022"}
 								builder={({ timeLeft }) => (
 									<div className="mb-10 font-thin">
@@ -271,11 +280,12 @@ const CelineRuntu = () => {
 								)}
 							/>
 							<button
-								className=" bg-gray-100 bg-opacity-75 border-2 border-purple-400 border-opacity-50 p-4 rounded-lg text-purple-400 font-thin z-10"
+								className=" bg-gray-100/75 border-2 border-purple-400 border-opacity-50 p-4 rounded-lg text-purple-400 font-thin z-10"
 								onClick={handleOnMainClick}
 							>
 								Buat Pengingat
-							</button>
+							</button> */}
+
 							{/* <div className="absolute top-0 left-0 right-0 bottom-0">
 								<div
 									style={{
@@ -432,7 +442,7 @@ const CelineRuntu = () => {
 						/> */}
 					</div>
 				</div>
-				<BottomNavBar
+				{/* <BottomNavBar
 					isOpen={isOpen}
 					music={{
 						artist: music[0],
@@ -440,7 +450,7 @@ const CelineRuntu = () => {
 						src: music[2],
 					}}
 					links={[]}
-				/>
+				/> */}
 			</div>
 		</div>
 	);
