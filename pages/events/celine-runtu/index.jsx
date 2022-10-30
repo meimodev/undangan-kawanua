@@ -1,11 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-page-custom-font */
 import Meta from "../../../comps/Meta";
 import Top from "../../../comps/Top";
-import Hosts from "../../../comps/Hosts";
 import OpenInvitation from "../../../comps/OpenInvitation";
 import BottomNavBar from "../../../comps/BottomNavBar";
 import CustomGallery from "../../../comps/CustomGallery";
-// import ReactFullpage from "@fullpage/react-fullpage";
 import Wishes from "../../../comps/Wishes";
 import Footer from "../../../comps/Footer";
 import { useRouter } from "next/router";
@@ -16,13 +15,15 @@ import { useEffect } from "react";
 import { firestoreGetDocData, firestoreUpdateDocData } from "../../../firebase";
 import { useState } from "react";
 
+import { Fade } from "react-awesome-reveal";
+
 const CelineRuntu = () => {
 	const { to } = useRouter().query;
 
 	const handleOnMainClick = (e) => {
 		e.preventDefault();
 		window.open(
-			"https://calendar.google.com/calendar/render?action=TEMPLATE&text=Bayu%20-%20Egi%20Wedding&dates=20220202T060000Z/20220202T100000Z&details=Pemberkatan%20%20@GMIM%20Paulus%20Tounsaru%2014:00%20WITA,%20Resepsi%20%20@Pusgiat%20Tondano%2018:00%20WITA&location=Tondano&trp=true",
+			"https://calendar.google.com/calendar/render?action=TEMPLATE&text=Celine%20Runtu%20Ibadah%20Baptis%20dan%20Ibadah%20Anak&dates=20221106/20221106&details=Ibadah%20Baptisan%20Pukul%2012:00,%20Ibadah%20Anak%20Pukul%2015:00&location=1.300046,%20124.906259&trp=true",
 			"_blank"
 		);
 	};
@@ -35,7 +36,7 @@ const CelineRuntu = () => {
 		const bboldPhone = "+6285756681077";
 		const host = "celine-runtu-birthday";
 		const name = to;
-		const url = `https://api.whatsapp.com/send?phone=${bboldPhone}&text=undangankawanua.com%2Ffrom%2F${host}%3Ffrom%3D${name}%26bbold_token%3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ`;
+		const url = `https://api.whatsapp.com/send?phone=${bboldPhone}&text=undangankawanua.com%2Ffrom%2F${host}%3Ffrom%3D${name}%26bbold_token%3DeyJe45JiIiaWFE2MjM5MDIyfQ`;
 
 		openLink(url);
 	};
@@ -88,7 +89,7 @@ const CelineRuntu = () => {
 				crossOrigin={"true"}
 			/>
 			<link
-				href="https://fonts.googleapis.com/css2?family=Montez&family=Zen+Maru+Gothic:wght@400;700&display=swap"
+				href="https://fonts.googleapis.com/css2?family=Montez&family=Parisienne&family=Zen+Maru+Gothic:wght@400;700&display=swap"
 				rel="stylesheet"
 			/>
 		</Meta>
@@ -96,6 +97,7 @@ const CelineRuntu = () => {
 
 	const primaryFontFamily = { fontFamily: "Montez" };
 	const secondaryFontFamily = { fontFamily: "Zen Maru Gothic" };
+	const thirdFontFamily = { fontFamily: "Parisienne" };
 
 	const imageList = [
 		"https://i.ibb.co/1KLXNLH/celine-runtu-1.jpg",
@@ -165,17 +167,67 @@ const CelineRuntu = () => {
 				>
 					<button
 						onClick={openBboldLink}
-						className="rounded-md text-gray-100 bg-purple-400 bg-opacity-75 px-4 pt-1 pb-2 mb-16"
+						className="rounded-md text-gray-100 bg-rose-400 bg-opacity-75 px-4 pt-1 pb-2 mb-16 shadow-md"
 					>
 						<div className="flex gap-2 items-baseline">
-							<div className="las la-gift text-lg"></div>
-							<span>Gift photos with bbold™ 10% off</span>
+							<div className="las la-gift text-xl"></div>
+							<span>Gift bbold™ 10% off</span>
 						</div>
 					</button>
 				</div>
 			),
 		},
 	];
+
+	const EventsSection = ({
+		title,
+		date,
+		time,
+		location,
+		mapLink,
+		isLeft = false,
+	}) => (
+		<div className="flex flex-col w-full z-10">
+			{isLeft ? (
+				<img
+					src="https://i.ibb.co/48p3QdF/photo-left.png"
+					alt="photo-left"
+					className="mb-16"
+				/>
+			) : null}
+			<div className="text-gray-500">
+				<h2
+					className="font-bold text-2xl text-rose-400"
+					style={primaryFontFamily}
+				>
+					{title}
+				</h2>
+				<div className="text-xs pb-2">
+					<div>
+						{date} {" | "}
+						<span className="font-bold text-rose-400">{time}</span>
+					</div>
+					<div>{location}</div>
+				</div>
+				<button
+					className="border bg-rose-400 p-1.5 px-3 rounded-lg text-white font-thin z-10 shadow-lg"
+					onClick={() => openLink(mapLink)}
+				>
+					<div className="flex justify-center items-center">
+						<i className="las la-map-marker text-sm pr-0.5"></i>
+						<span className="text-xs">Maps</span>
+					</div>
+				</button>
+			</div>
+			{isLeft ? null : (
+				<img
+					src="https://i.ibb.co/qmGvjWm/photo-right.png"
+					alt="photo-right"
+					className="mt-16"
+				/>
+			)}
+		</div>
+	);
 
 	const galleryPhotos = [...galleryHead, ...galleryBody, ...bboldButton];
 
@@ -184,273 +236,282 @@ const CelineRuntu = () => {
 			<_BuildHead />
 			<div
 				style={secondaryFontFamily}
-				className="cursor-default overflow-hidden"
+				className="cursor-default scroll-smooth bg-[url(https://i.ibb.co/M1jwdK1/background.png)] bg-repeat-y bg-sky-100/75 "
 			>
-				{/* <OpenInvitation
+				<OpenInvitation
 					onClickOpenInvitation={() => {
 						setIsOpen(true);
 					}}
 					builder={({ onClose }) => {
 						return (
-							<div className="">
-								<div className="">
+							<div className="text-center h-screen flex flex-col justify-center items-center p-10 bg-[url(https://i.ibb.co/M1jwdK1/background.png)] bg-repeat-y bg-sky-100/75 relative">
+								<img
+									className="absolute z-10 px-12 sm:p-[15rem]"
+									src="https://i.ibb.co/RQDZ4Bf/event-butterfly.png"
+									alt="frame"
+								/>
+								<div
+									style={primaryFontFamily}
+									className="text-4xl font-thin text-rose-400 flex flex-col pb-2 z-20"
+								>
+									<div>Ibadah Baptisan</div>
+									<div className="">&</div>
+									<div>Ibadah Anak</div>
+								</div>
+
+								<div className="text-xl text-gray-600 font-thin">
+									Celine Gracela Runtu
+								</div>
+
+								<div className="my-6 text-gray-400" style={secondaryFontFamily}>
+									<div className="text-sm">Kepada Yth:</div>
 									<div
-										className=""
-										// style={{
-										// 	backgroundImage:
-										// 		"url(https://i.ibb.co/CKW5Qp7/web-top-1.png)",
-										// 	backgroundRepeat: "no-repeat",
-										// 	backgroundSize: "contain",
-										// 	backgroundPosition: "center",
-										// 	width: "600px",
-										// 	height: "400px",
-										// 	zIndex: "-10",
-										// }}
+										className="text-5xl text-rose-400 pt-1 font-bold"
+										style={primaryFontFamily}
 									>
-										<div
-											style={{ fontFamily: "Josefin Sans" }}
-											className=" text-center"
-										>
-											<h3 className="text-md font-thin pt-10">Save The Date</h3>
-											<h3
-												className="text-purple-400 text-5xl text-center pr-8"
-												style={{ fontFamily: "Meow Script" }}
-											>
-												Bayu &amp; Egi
-											</h3>
-											<h3 className="text-xs text-purple-400 font-thin pb-4">
-												02 Februari 2022
-											</h3>
-
-											<div className="text-md font-normal pb-2">{to}</div>
-
-											<button
-												className="shadow-md p-1 px-5 rounded-lg bg-purple-400 text-gray-100 text-xs z-10"
-												onClick={() => onClose()}
-											>
-												<i className="las la-envelope-open text-xl"></i>
-											</button>
-										</div>
+										{to}
 									</div>
 								</div>
+
+								<button
+									className="shadow-xl px-4 py-2 rounded-lg bg-rose-400 text-gray-100 font-bold z-10 animate-pulse"
+									onClick={() => onClose()}
+								>
+									<i className="las la-envelope-open text-2xl font-bold"></i>
+								</button>
 							</div>
 						);
 					}}
-				/> */}
+				/>
 				<div className="max-w-lg mx-auto">
-					<div className="min-h-screen h-screen section " id="top">
+					<div className="h-screen section " id="top">
 						<Top
 							eventDate={"12/12/2022"}
-							className="h-full flex items-center flex-col justify-center"
+							className="h-full flex items-center flex-col justify-center relative"
 						>
-							<h3
-								className="text-rose-400 text-center text-2xl mb-4"
-								style={primaryFontFamily}
-							>
-								Ibadah Baptisan <br /> <span className="text-lg">dan</span>{" "}
-								<br /> Ulang Tahun
-							</h3>
-							<h3
-								className="text-rose-400 text-center text-4xl mb-8 font-bold"
-								style={primaryFontFamily}
-							>
-								Celine Gracella Runtu
-							</h3>
-							<div className="bg-[url('/img/test/top/photo.png')]  w-24 h-36 bg-cover "></div>
-
-							{/* <Countdown
-								eventDate={"11/06/2022"}
-								builder={({ timeLeft }) => (
-									<div className="mb-10 font-thin">
-										<div className="flex gap-5 text-sm">
-											<div className="bg-transparent w-16 h-16 rounded-lg flex flex-col justify-center border-b-2 text-gray-500 bg-gray-100 bg-opacity-50 border-purple-400 items-center">
-												<div>{timeLeft.days}</div>
-												<div>Hari</div>
-											</div>
-											<div className="bg-transparent w-16 h-16 rounded-lg flex flex-col justify-center text-gray-500 bg-gray-100 bg-opacity-50  border-b-2 border-purple-400 items-center">
-												<div>{timeLeft.hours}</div>
-												<div>Jam</div>
-											</div>
-											<div className="bg-transparent w-16 h-16 rounded-lg flex flex-col justify-center text-gray-500 bg-gray-100 bg-opacity-50 border-b-2 border-purple-400 items-center">
-												<div>{timeLeft.minutes}</div>
-												<div>Menit</div>
-											</div>
-										</div>
-									</div>
-								)}
+							<img
+								className="absolute z-10 px-2 sm:p-20"
+								src="https://i.ibb.co/YdB9nzr/frame.png"
+								alt="frame"
 							/>
-							<button
-								className=" bg-gray-100/75 border-2 border-purple-400 border-opacity-50 p-4 rounded-lg text-purple-400 font-thin z-10"
-								onClick={handleOnMainClick}
-							>
-								Buat Pengingat
-							</button> */}
-
-							{/* <div className="absolute top-0 left-0 right-0 bottom-0">
+							<img
+								className="absolute z-20  sm:p-24"
+								src="https://i.ibb.co/3ND7Jfy/top-butterfly.png"
+								alt="frame butterfly"
+							/>
+							<Fade cascade>
 								<div
-									style={{
-										backgroundImage:
-											"url(https://i.ibb.co/27CTnXk/IMG-8537.jpg)",
-										backgroundRepeat: "no-repeat",
-										backgroundSize: "cover",
-										backgroundPosition: "center",
-										zIndex: "-50",
-									}}
-									className="w-full h-full opacity-50 "
-								></div>
-							</div>
-							<div
-								style={{
-									backgroundImage:
-										"url(https://i.ibb.co/GM66QM2/web-info-1.png)",
-									backgroundRepeat: "no-repeat",
-									backgroundSize: "contain",
-									backgroundPosition: "center",
-									width: "400px",
-									height: "400px",
-									zIndex: "0",
-								}}
-								className="absolute bottom-0 -right-8 transform translate-y-60"
-							></div> */}
+									className="text-rose-400 text-center text-2xl font-thin "
+									style={thirdFontFamily}
+								>
+									<div>Ibadah Baptisan</div>
+									<div className="text-lg">dan</div>
+									<div> Ibadah Anak</div>
+								</div>
+								<img
+									src="https://i.ibb.co/tZ01HTW/divider.png"
+									alt="divider"
+									className="w-44 py-2"
+								/>
+								<h3
+									className="text-rose-400 text-center text-[2.5rem] mb-4 font-bold drop-shadow-[0_3px_0.5px_rgba(254,205,211,1)] "
+									style={primaryFontFamily}
+								>
+									Celine Gracella Runtu
+								</h3>
+								<img
+									src="https://i.ibb.co/RYDRH8x/photo.png"
+									alt="photo"
+									className="h-44"
+								/>
+							</Fade>
 						</Top>
 					</div>
 
-					<div className="section px-4 " id="event">
-						<EventInfo
-							builder={() => (
-								<div>
-									<div className="flex flex-col gap-12 text-center ">
-										<div>
-											<h2 className="text-4xl" style={primaryFontFamily}>
-												Ibadah Baptisan &amp; Ibadah Anak
-											</h2>
-											<i className="las la-glass-cheers text-7xl text-purple-400"></i>
-											<div className="py-2 font-thin">
-												<div>6 November 2022</div>
-												<div className="font-bold text-purple-400">
-													15 : 00 WITA
+					<div className="section my-4 sm:mt-10" id="countdown">
+						<div className="flex flex-col items-center">
+							<Fade cascade>
+								<Countdown
+									eventDate={"11/06/2022"}
+									builder={({ timeLeft }) => (
+										<div className="mb-5 font-thin">
+											<div className="flex text-sm text-gray-500">
+												<div className="w-16 h-16 flex flex-col justify-center border-x-rose-400 border-x-[0.5px] items-center">
+													<div className="font-bold">{timeLeft.days}</div>
+													<div className="text-xs">HARI</div>
 												</div>
-												<div>
-													Kel. Runtu - Mamesah Linkungan IV Kel. Rinegetan, Kec.
-													Tondano Barat
+												<div className="w-16 h-16 flex flex-col justify-center border-x-rose-400  items-center">
+													<div className="font-bold">{timeLeft.hours}</div>
+													<div className="text-xs">JAM</div>
+												</div>
+												<div className="w-16 h-16 flex flex-col justify-center border-x-rose-400 border-x-[0.5px] items-center">
+													<div className="font-bold">{timeLeft.minutes}</div>
+													<div className="text-xs">MENIT</div>
 												</div>
 											</div>
-											<button
-												className=" border border-purple-400 p-1 px-3 rounded-lg text-purple-400 font-thin z-10"
-												onClick={() =>
-													openLink("https://goo.gl/maps/3fmTWvCvS4rdEdcJ9")
-												}
-											>
-												<div className="flex justify-center items-center">
-													<i className="las la-map-marker text-xl pr-0.5"></i>
-													<span className="text-sm">Maps</span>
-												</div>
-											</button>
 										</div>
+									)}
+								/>
+								<button
+									className="bg-rose-400 px-4 py-2 rounded-lg text-white text-xs shadow-lg"
+									onClick={handleOnMainClick}
+								>
+									<div className="flex justify-center items-center">
+										<i className="las la-bell text-xl pr-0.5"></i>
+										<span className="text-xs">Buat Pengingat</span>
 									</div>
+								</button>
+							</Fade>
+						</div>
+					</div>
+
+					<div className="h-screen section sm:mt-10" id="event">
+						<EventInfo
+							builder={() => (
+								<div className="h-full flex items-center justify-center text-center relative">
+									<Fade cascade>
+										<img
+											className="absolute z-0 p-10"
+											src="https://i.ibb.co/RQDZ4Bf/event-butterfly.png"
+											alt="frame"
+										/>
+										<EventsSection
+											title="Ibadah Anak"
+											date="6 NOV 2022"
+											time="PUKUL 15:00 WITA"
+											location="KEL. RUNTU - MAMESAH, LINK. IV"
+											mapLink="https://goo.gl/maps/7e321rNrrrpToLmC6"
+											isLeft
+										/>
+										<EventsSection
+											title="Ibadah Baptisan"
+											date="6 NOV 2022"
+											time="PUKUL 12:00 WITA"
+											location="KEL. RUNTU - MAMESAH, LINK. IV"
+											mapLink="https://goo.gl/maps/7e321rNrrrpToLmC6"
+										/>
+									</Fade>
 								</div>
 							)}
 						/>
-						{/* <div
-							style={{
-								backgroundImage:
-									"url(https://i.ibb.co/C24Txnp/web-event-1.png)",
-								backgroundRepeat: "no-repeat",
-								backgroundSize: "contain",
-								backgroundPosition: "center",
-								width: "350px",
-								height: "350px",
-								zIndex: "-10",
-							}}
-							className="absolute bottom-0 -right-8 transform translate-y-32 "
-						>
-
-						</div> */}
 					</div>
 
-					<div className=" section px-4 bg-yellow-100" id="gallery">
-						<CustomGallery isTitleDisabled images={galleryPhotos} />
-						{/* <div
-							style={{
-								backgroundImage: "url(https://i.ibb.co/HdTXy1J/gallery-1.png)",
-								backgroundRepeat: "no-repeat",
-								backgroundSize: "contain",
-								backgroundPosition: "center",
-								width: "500px",
-								height: "500px",
-								zIndex: "-10",
-							}}
-							className="absolute bottom-0 -right-14 transform translate-y-32"
-						></div> */}
-					</div>
-
-					<div className=" section px-4 flex flex-col bg-blue-100" id="wishes">
-						<Wishes
-							inviteeName={to}
-							onNewWishes={handleOnNewWishes}
-							wishes={wishesData.wishes}
-							enable={wishesData.enable}
-						/>
-					</div>
-
-					<div className=" section px-4 bg-red-100" id="footer">
-						{/* <div
-							style={{
-								backgroundImage: "url(https://i.ibb.co/GM66QM2/web-info-1.png)",
-								backgroundRepeat: "no-repeat",
-								backgroundSize: "contain",
-								backgroundPosition: "center",
-								width: "400px",
-								height: "400px",
-								zIndex: "-10",
-							}}
-							className=" top-0 -left-8 transform -translate-y-96 opacity-30 rotate-180"
-						/> */}
-
-						<div className=" text-center">
-							<h1 className="text-5xl font-thin">Happy Birthday</h1>
-							<h1 className="text-xl mt-5 mb-5 font-thin">
-								Celine Gracela Runtu
-							</h1>
-							<Footer isMinimalist />
+					<div className="section my-6" id="quote">
+						<div className="text-center">
+							<Fade cascade>
+								<div
+									className="text-rose-400 text-2xl"
+									style={primaryFontFamily}
+								>
+									Mazmur 91 : 11
+								</div>
+								<div className="px-4 py-1 text-gray-500 text-sm italic">
+									&quot;Sebab malaikat-malaikat-Nya akan diperintahkan-Nya
+									kepadamu untuk menjaga engkau di segala jalanmu.&quot;
+								</div>
+							</Fade>
 						</div>
+					</div>
 
-						{/* <div
-							style={{
-								backgroundImage:
-									"url(https://i.ibb.co/QrRRRsd/info-dash-1.png)",
-								backgroundRepeat: "no-repeat",
-								backgroundSize: "contain",
-								backgroundPosition: "center",
-								width: "500px",
-								height: "800px",
-								zIndex: "-20",
-							}}
-							className="absolute -top-10 -left-0   transform translate-x-20 opacity-75"
-						/>
+					<Fade cascade>
+						<div className=" section px-4 sm:px-20 sm:mt-10 " id="gallery">
+							<div className="relative h-full">
+								<img
+									className="absolute -z-10 p-0 -left-24 -top-10"
+									src="https://i.ibb.co/WDKLzpZ/grass-1.png"
+									alt="grass 1"
+								/>
+								<CustomGallery
+									images={galleryPhotos}
+									title={
+										<div
+											className="text-6xl py-4 text-center text-rose-400"
+											style={primaryFontFamily}
+										>
+											Gallery
+										</div>
+									}
+								/>
+							</div>
+						</div>
+					</Fade>
+
+					<Fade cascade>
 						<div
-							style={{
-								backgroundImage: "url(https://i.ibb.co/v3vtFxF/web-info-2.png)",
-								backgroundRepeat: "no-repeat",
-								backgroundSize: "contain",
-								backgroundPosition: "center",
-								width: "500px",
-								height: "500px",
-								zIndex: "-10",
-							}}
-							className="absolute -bottom-10 -left-20   transform "
-						/> */}
+							className="section px-4 flex flex-col mt-10 sm:mt-16"
+							id="wishes"
+						>
+							<div className="relative">
+								<img
+									className="absolute -z-10 p-0  -top-10"
+									src="https://i.ibb.co/3ND7Jfy/top-butterfly.png"
+									alt="butterfly"
+								/>
+								<Wishes
+									inviteeName={to}
+									onNewWishes={handleOnNewWishes}
+									wishes={wishesData.wishes}
+									enable={wishesData.enable}
+									sendButtonClassName=" text-white bg-rose-400"
+									textAreaClassName="focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400"
+									wishesBoxClassName="border-b-[1px] border-rose-400 p-3 rounded-md my-4"
+									title={
+										<div
+											className="text-6xl pt-4 text-center text-rose-400"
+											style={primaryFontFamily}
+										>
+											Wishes
+										</div>
+									}
+								/>
+							</div>
+						</div>
+					</Fade>
+
+					<div
+						className="section px-4 bg-gradient-to-b from-transparent via-rose-300/50 to-rose-300/75"
+						id="footer"
+					>
+						<div className="h-full flex flex-col justify-center text-center text-gray-500 pb-10">
+							<Fade cascade>
+								<h1
+									className="text-4xl text-rose-400 font-bold"
+									style={primaryFontFamily}
+								>
+									Celine Gracela Runtu
+								</h1>
+								<h1 className="text-xl mt-4" style={secondaryFontFamily}>
+									Blessed Parents
+								</h1>
+								<h1
+									className="text-4xl text-rose-400 font-thin"
+									style={primaryFontFamily}
+								>
+									Randy & Gisela
+								</h1>
+
+								<img
+									className="py-2 pt-4"
+									src="https://i.ibb.co/ggynKn3/parents.jpg"
+									alt="parents"
+								/>
+
+								<Footer isMinimalist />
+							</Fade>
+						</div>
 					</div>
 				</div>
-				{/* <BottomNavBar
+				<BottomNavBar
 					isOpen={isOpen}
 					music={{
-						artist: music[0],
-						title: music[1],
+						artist: "",
+						title: "",
 						src: music[2],
 					}}
 					links={[]}
-				/> */}
+					className="fixed -bottom-1 right-0 z-40 mx-2"
+					classNamePlayer="bg-rose-400 p-2 flex gap-1 rounded-xl mb-4 text-gray-100 "
+				/>
 			</div>
 		</div>
 	);

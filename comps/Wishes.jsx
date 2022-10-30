@@ -1,143 +1,156 @@
 import PropTypes from "prop-types";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 
-const Wishes = ({wishes, inviteeName, enable, onNewWishes}) => {
-    const [name, setName] = useState("");
-    const [message, setMessage] = useState("");
-    // const [date, setDate] = useState("");
+const Wishes = ({
+	wishes,
+	inviteeName,
+	enable,
+	onNewWishes,
+	title,
+	sendButtonClassName = "",
+	textAreaClassName = "",
+	wishesBoxClassName = "",
+}) => {
+	const [name, setName] = useState("");
+	const [message, setMessage] = useState("");
+	// const [date, setDate] = useState("");
 
-    const [_wishes, _setWishes] = useState([]);
+	const [_wishes, _setWishes] = useState([]);
 
-    const [canSendMessage, setCanSendMessage] = useState(true);
+	const [canSendMessage, setCanSendMessage] = useState(true);
 
-    const onClickSend = (e) => {
-        e.preventDefault();
+	const onClickSend = (e) => {
+		e.preventDefault();
 
-        if (!message || !name) {
-            return;
-        }
+		if (!message || !name) {
+			return;
+		}
 
-        const newDate = dayjs().format("D MMM YYYY, HH:mm");
-        const newWishes = {from: name, message, date: newDate, confirm: 0};
-        // setDate(newDate);
-        _setWishes([newWishes, ..._wishes]);
-        setCanSendMessage(false);
-        onNewWishes([newWishes, ...wishes]);
-    };
+		const newDate = dayjs().format("D MMM YYYY, HH:mm");
+		const newWishes = { from: name, message, date: newDate, confirm: 0 };
+		// setDate(newDate);
+		_setWishes([newWishes, ..._wishes]);
+		setCanSendMessage(false);
+		onNewWishes([newWishes, ...wishes]);
+	};
 
-    useEffect(() => {
-        _setWishes(wishes);
+	useEffect(() => {
+		_setWishes(wishes);
 
-        setName(inviteeName);
-        checkIfNameAlreadyCommented();
-    }, [inviteeName, wishes, enable]);
+		setName(inviteeName);
+		checkIfNameAlreadyCommented();
+	}, [inviteeName, wishes, enable]);
 
-    const checkIfNameAlreadyCommented = () => {
-        if (!enable) {
-            setCanSendMessage(false);
-            return;
-        }
-        const res = wishes.find((e) => e.from === inviteeName);
-        if (res) {
-            setCanSendMessage(false);
-        }
-    };
+	const checkIfNameAlreadyCommented = () => {
+		if (!enable) {
+			setCanSendMessage(false);
+			return;
+		}
+		const res = wishes.find((e) => e.from === inviteeName);
+		if (res) {
+			setCanSendMessage(false);
+		}
+	};
 
-    return (
-        <div>
-            {canSendMessage ? (
-                <div>
-                    <div className="pt-10">
-                        <label htmlFor="price" className="block text-xs text-gray-500">
-                            Name
-                        </label>
-                        <div className="mt-1 relative rounded-md shadow-sm ">
-                            <input
-                                type="text"
-                                name="name"
-                                id="name"
-                                className=" px-4 block w-full border text-sm border-gray-500 rounded-sm p-2 font-thin"
-                                value={name}
-                                readOnly={false}
-                                onChange={(e) => setName(e.target.value)}
-                            />
-                        </div>
-                    </div>
+	return (
+		<div className="mb-24">
+			{title ? title : null}
+			{canSendMessage ? (
+				<div>
+					<div className="">
+						<label htmlFor="price" className="block text-xs text-gray-500">
+							Nama Undangan
+						</label>
 
-                    <div className="mt-2">
-                        <label htmlFor="message" className="block text-xs text-gray-500">
-                            Wishes
-                        </label>
-                        <div className="mt-1">
-                            <div className="mt-1 relative rounded-md shadow-sm">
+						<div className="mt-1 relative rounded-md shadow-sm ">
+							<input
+								type="text"
+								name="name"
+								id="name"
+								className={
+									"mt-1 block w-full px-3 py-2 duration-700 bg-white border border-gray-400 rounded-md text-sm placeholder-gray-400 " +
+									textAreaClassName
+								}
+								placeholder="Nama di isi otomatis dari url undangan"
+								value={name}
+								readOnly={true}
+								onChange={(e) => setName(e.target.value)}
+							/>
+						</div>
+					</div>
+
+					<div className="mt-4">
+						<label htmlFor="price" className="block text-xs text-gray-500">
+							Pesan / Kesan
+						</label>
+						<div className="mt-1">
+							<div className="mt-1 relative rounded-md shadow-sm">
 								<textarea
-                                    type="text"
-                                    name="name"
-                                    id="name"
-                                    rows="5"
-                                    className=" px-4 block w-full border text-xs border-gray-500 rounded-sm p-2 "
-                                    placeholder="Message goes here ..."
-                                    readOnly={false}
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                    </div>
+									type="text"
+									name="name"
+									id="name"
+									rows="5"
+									className={
+										"mt-1 block w-full px-3 py-2 duration-700 bg-white border border-gray-400 rounded-md text-sm placeholder-gray-400 " +
+										textAreaClassName
+									}
+									placeholder="Silahkan masukkan pesan ..."
+									readOnly={false}
+									value={message}
+									onChange={(e) => setMessage(e.target.value)}
+								/>
+							</div>
+						</div>
+					</div>
 
-                    <div className="flex justify-center">
-                        {/* <p className="mt-1 text-xs font-light text-gray-200">
-					Be brief, be kind, be bold
-				</p> */}
-                        <button
-                            type="submit"
-                            className={
-                                "mt-3 p-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white " +
-                                (message && name
-                                    ? "bg-purple-500 opacity-100"
-                                    : "bg-gray-500 opacity-75")
-                            }
-                            onClick={onClickSend}
-                        >
-                            Kirim
-                        </button>
-                    </div>
-                </div>
-            ) : (
-                <div
-                    className="text-4xl text-center"
-                    style={{fontFamily: "Meow Script"}}
-                >
-                    Wishes
-                </div>
-            )}
+					<div className="flex justify-center">
+						<button
+							type="submit"
+							className={
+								"mt-3 p-2 px-4 shadow-lg text-sm rounded-md duration-500 " +
+								(message && name
+									? "opacity-100 " + sendButtonClassName
+									: "text-white bg-gray-500 opacity-75")
+							}
+							onClick={onClickSend}
+						>
+							Kirim
+						</button>
+					</div>
+				</div>
+			) : null}
 
-            <hr className="my-4"/>
-            {_wishes.map((e, index) => (
-                <div
-                    key={index}
-                    className="border border-purple-500 px-3  py-3 my-2 rounded-md"
-                >
-                    <div className="flex justify-between">
-                        <div className="flex gap-1">
-                            <p className="text-sm font-thin ">{e.from}</p>
-                            {e.confirm > 0 ? (
-                                <i className="las la-check-circle text-md text-purple-400"/>
-                            ) : null}
-                        </div>
-                        <div className="text-xs font-thin">{e.date}</div>
-                    </div>
+			<hr className="my-4" />
+			{_wishes.map((e, index) => (
+				<div
+					key={index}
+					className={
+						wishesBoxClassName
+							? wishesBoxClassName
+							: "border border-purple-500 px-3  py-3 my-2 rounded-md"
+					}
+				>
+					<div className="flex justify-between">
+						<div className="flex gap-1">
+							<p className="text-sm font-thin ">{e.from}</p>
+							{e.confirm > 0 ? (
+								<i className="las la-check-circle text-md text-purple-400" />
+							) : null}
+						</div>
+						<div className="text-xs font-thin text-gray-400">{e.date}</div>
+					</div>
 
-                    <p className="text-xs ">{e.message}</p>
-                </div>
-            ))}
-        </div>
-    );
+					<p className="text-xs font-bold">{e.message}</p>
+				</div>
+			))}
+		</div>
+	);
 };
 
 Wishes.propTypes = {
-    wishes: PropTypes.array,
+	wishes: PropTypes.array,
+	title: PropTypes.node,
 };
 
 export default Wishes;
