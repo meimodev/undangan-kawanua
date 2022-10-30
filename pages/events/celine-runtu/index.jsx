@@ -243,7 +243,7 @@ const CelineRuntu = () => {
 			<_BuildHead />
 			<div
 				style={secondaryFontFamily}
-				className="cursor-default scroll-smooth bg-[url(https://i.ibb.co/M1jwdK1/background.png)] bg-repeat-y bg-sky-100/75 "
+				className="cursor-default scroll-smooth bg-[url(https://i.ibb.co/M1jwdK1/background.png)] bg-repeat-y bg-sky-100/75 lg:bg-cover "
 			>
 				<OpenInvitation
 					onClickOpenInvitation={() => {
@@ -251,41 +251,46 @@ const CelineRuntu = () => {
 					}}
 					builder={({ onClose }) => {
 						return (
-							<div className="text-center h-screen flex flex-col justify-center items-center p-10 bg-[url(https://i.ibb.co/M1jwdK1/background.png)] bg-repeat-y bg-sky-100/75 relative">
+							<div className="text-center h-screen flex flex-col justify-center items-center bg-[url(https://i.ibb.co/M1jwdK1/background.png)] bg-cover bg-sky-100/75 relative">
 								<img
-									className="absolute z-10 px-12 sm:p-[15rem]"
+									className="absolute z-10 sm:max-w-lg"
 									src="https://i.ibb.co/RQDZ4Bf/event-butterfly.png"
 									alt="frame"
 								/>
-								<div
-									style={primaryFontFamily}
-									className="text-4xl font-thin text-rose-400 flex flex-col pb-2 z-20"
-								>
-									<div>Ibadah Baptisan</div>
-									<div className="">&</div>
-									<div>Ibadah Anak</div>
-								</div>
-
-								<div className="text-xl text-gray-600 font-thin">
-									Celine Gracela Runtu
-								</div>
-
-								<div className="my-6 text-gray-400" style={secondaryFontFamily}>
-									<div className="text-sm">Kepada Yth:</div>
+								<div className="z-50">
 									<div
-										className="text-5xl text-rose-400 pt-1 font-bold"
 										style={primaryFontFamily}
+										className="text-4xl font-thin text-rose-400 flex flex-col pb-2 z-20"
 									>
-										{to}
+										<div>Ibadah Baptisan</div>
+										<div className="">&</div>
+										<div>Ibadah Anak</div>
 									</div>
-								</div>
 
-								<button
-									className="shadow-xl px-4 py-2 rounded-lg bg-rose-400 text-gray-100 font-bold z-10 animate-pulse"
-									onClick={() => onClose()}
-								>
-									<i className="las la-envelope-open text-2xl font-bold"></i>
-								</button>
+									<div className="text-xl text-gray-600 font-thin">
+										Celine Gracela Runtu
+									</div>
+
+									<div
+										className="my-6 text-gray-400"
+										style={secondaryFontFamily}
+									>
+										<div className="text-sm">Kepada Yth:</div>
+										<div
+											className="text-5xl text-rose-400 pt-1 font-bold"
+											style={primaryFontFamily}
+										>
+											{to}
+										</div>
+									</div>
+
+									<button
+										className="shadow-xl px-4 py-2 rounded-lg bg-rose-400 text-gray-100 font-bold z-10 animate-pulse"
+										onClick={() => onClose()}
+									>
+										<i className="las la-envelope-open text-2xl font-bold"></i>
+									</button>
+								</div>
 							</div>
 						);
 					}}
