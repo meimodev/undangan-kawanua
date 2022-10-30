@@ -11,11 +11,11 @@ import { useRouter } from "next/router";
 import EventInfo from "../../../comps/EventInfo";
 import Countdown from "../../../comps/Countdown";
 
-import { useEffect } from "react";
 import { firestoreGetDocData, firestoreUpdateDocData } from "../../../firebase";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import { Fade } from "react-awesome-reveal";
+import { Howl } from "howler";
 
 const CelineRuntu = () => {
 	const { to } = useRouter().query;
@@ -73,10 +73,30 @@ const CelineRuntu = () => {
 		setWishesData(_wishesData);
 	};
 
+	const imageList = [
+		"https://i.ibb.co/1KLXNLH/celine-runtu-1.jpg",
+		"https://i.ibb.co/NNCBTrL/celine-runtu-2.jpg",
+		"https://i.ibb.co/fvdRh1D/celine-runtu-3.jpg",
+		"https://i.ibb.co/ZxWBC0m/celine-runtu-4.jpg",
+		"https://i.ibb.co/4PzkLBR/celine-runtu-5.jpg",
+		"https://i.ibb.co/VmX5Lxx/celine-runtu-6.jpg",
+		"https://i.ibb.co/Bw91XcM/celine-runtu-7.jpg",
+		"https://i.ibb.co/n68LLxx/celine-runtu-8.jpg",
+		"https://i.ibb.co/2S1p0XQ/celine-runtu-9.jpg",
+		"https://i.ibb.co/f0WY2Zy/celine-runtu-10.jpg",
+		"https://i.ibb.co/XSxTbQj/celine-runtu-11.jpg",
+		"https://i.ibb.co/Q9MKYcF/celine-runtu-12.jpg",
+		"https://i.ibb.co/2PRJr4m/celine-runtu-13.jpg",
+		"https://i.ibb.co/c1Bfm63/celine-runtu-14.jpg",
+		"https://i.ibb.co/k2s4QN8/celine-runtu-15.jpg",
+		"https://i.ibb.co/ZJ3FNDc/celine-runtu-16.jpg",
+		"https://i.ibb.co/RQCCtN6/celine-runtu-17.jpg",
+	];
+
 	const _BuildHead = () => (
 		<Meta
 			title="Celine Runtu | 6 November 2022"
-			image="https://i.ibb.co/27CTnXk/IMG-8537.jpg"
+			image={imageList[Math.floor(Math.random() * imageList.length)]}
 		>
 			<link
 				rel="stylesheet"
@@ -98,26 +118,6 @@ const CelineRuntu = () => {
 	const primaryFontFamily = { fontFamily: "Montez" };
 	const secondaryFontFamily = { fontFamily: "Zen Maru Gothic" };
 	const thirdFontFamily = { fontFamily: "Parisienne" };
-
-	const imageList = [
-		"https://i.ibb.co/1KLXNLH/celine-runtu-1.jpg",
-		"https://i.ibb.co/NNCBTrL/celine-runtu-2.jpg",
-		"https://i.ibb.co/fvdRh1D/celine-runtu-3.jpg",
-		"https://i.ibb.co/ZxWBC0m/celine-runtu-4.jpg",
-		"https://i.ibb.co/4PzkLBR/celine-runtu-5.jpg",
-		"https://i.ibb.co/VmX5Lxx/celine-runtu-6.jpg",
-		"https://i.ibb.co/Bw91XcM/celine-runtu-7.jpg",
-		"https://i.ibb.co/n68LLxx/celine-runtu-8.jpg",
-		"https://i.ibb.co/2S1p0XQ/celine-runtu-9.jpg",
-		"https://i.ibb.co/f0WY2Zy/celine-runtu-10.jpg",
-		"https://i.ibb.co/XSxTbQj/celine-runtu-11.jpg",
-		"https://i.ibb.co/Q9MKYcF/celine-runtu-12.jpg",
-		"https://i.ibb.co/2PRJr4m/celine-runtu-13.jpg",
-		"https://i.ibb.co/c1Bfm63/celine-runtu-14.jpg",
-		"https://i.ibb.co/k2s4QN8/celine-runtu-15.jpg",
-		"https://i.ibb.co/ZJ3FNDc/celine-runtu-16.jpg",
-		"https://i.ibb.co/RQCCtN6/celine-runtu-17.jpg",
-	];
 
 	const galleryHead = [
 		{
@@ -195,7 +195,7 @@ const CelineRuntu = () => {
 					className="mb-16"
 				/>
 			) : null}
-			<div className="text-gray-500">
+			<div className="text-gray-500 px-1">
 				<h2
 					className="font-bold text-2xl text-rose-400"
 					style={primaryFontFamily}
@@ -231,6 +231,13 @@ const CelineRuntu = () => {
 
 	const galleryPhotos = [...galleryHead, ...galleryBody, ...bboldButton];
 
+	const howl = new Howl({
+		src: [music[2]],
+		html5: true,
+		preload: true,
+		loop: true,
+		// autoplay: true,
+	});
 	return (
 		<div>
 			<_BuildHead />
@@ -379,7 +386,7 @@ const CelineRuntu = () => {
 											title="Ibadah Anak"
 											date="6 NOV 2022"
 											time="PUKUL 15:00 WITA"
-											location="KEL. RUNTU - MAMESAH, LINK. IV"
+											location="KEL. RUNTU - MAMESAH, LINKUNGAN IV"
 											mapLink="https://goo.gl/maps/7e321rNrrrpToLmC6"
 											isLeft
 										/>
@@ -387,7 +394,7 @@ const CelineRuntu = () => {
 											title="Ibadah Baptisan"
 											date="6 NOV 2022"
 											time="PUKUL 12:00 WITA"
-											location="KEL. RUNTU - MAMESAH, LINK. IV"
+											location="KEL. RUNTU - MAMESAH, LINKUNGAN IV"
 											mapLink="https://goo.gl/maps/7e321rNrrrpToLmC6"
 										/>
 									</Fade>
@@ -503,11 +510,9 @@ const CelineRuntu = () => {
 				</div>
 				<BottomNavBar
 					isOpen={isOpen}
-					music={{
-						artist: "",
-						title: "",
-						src: music[2],
-					}}
+					artist={""}
+					title={""}
+					howl={howl}
 					links={[]}
 					className="fixed -bottom-1 right-0 z-40 mx-2"
 					classNamePlayer="bg-rose-400 p-2 flex gap-1 rounded-xl mb-4 text-gray-100 "

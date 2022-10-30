@@ -3,11 +3,13 @@ import Link from "next/link";
 import { Howl } from "howler";
 
 const BottomNavBar = ({
-	music,
+	artist = "",
+	title = "",
 	links,
 	isOpen,
 	className = "",
 	classNamePlayer = "",
+	howl,
 }) => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -15,39 +17,20 @@ const BottomNavBar = ({
 	useEffect(() => {
 		if (isOpen) {
 			playButton.current.click();
+			return;
 		}
-
-		// howl.current.once("load", (err) => {
-		// 	console.log(howl.current.state());
-		// 	// howl.current.play();
-		// 	setTimeout(() => {
-		// 		console.log("calling play");
-		// 		playButton.current.click();
-		// 	}, 3000);
-		// });
 	}, [isOpen]);
 
-	const howl = useRef(
-		new Howl({
-			src: [music.src],
-			html5: true,
-			preload: true,
-			loop: true,
-			// autoplay: true,
-		})
-	);
 	const playButton = useRef();
 	const toggleAudio = () => {
 		if (isPlaying) {
 			// noinspection JSCheckFunctionSignatures
-			if (howl.current.playing()) {
-				howl.current.pause();
+			if (howl.playing()) {
+				howl.pause();
 			}
 		} else {
 			// noinspection JSCheckFunctionSignatures
-			if (!howl.current.playing()) {
-				howl.current.play();
-			}
+			howl.play();
 		}
 	};
 
@@ -93,7 +76,7 @@ const BottomNavBar = ({
 				</button>
 
 				<div className="flex-auto text-left text-xs self-center">
-					{`${music.artist} ${music.title}`}
+					{`${artist} ${title}`}
 				</div>
 				{/* <button
 					onClick={() => setIsNavOpen(!isNavOpen)}
