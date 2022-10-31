@@ -12,7 +12,7 @@ import EventInfo from "../../../comps/EventInfo";
 import Countdown from "../../../comps/Countdown";
 
 import { firestoreGetDocData, firestoreUpdateDocData } from "../../../firebase";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { Fade } from "react-awesome-reveal";
 import { Howl } from "howler";
@@ -94,10 +94,7 @@ const CelineRuntu = () => {
 	];
 
 	const _BuildHead = () => (
-		<Meta
-			title="Celine Runtu | 6 November 2022"
-			image={imageList[Math.floor(Math.random() * imageList.length)]}
-		>
+		<Meta title="Celine Runtu | 6 November 2022" image={imageList[11]}>
 			<link
 				rel="stylesheet"
 				href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
@@ -332,7 +329,7 @@ const CelineRuntu = () => {
 									Celine Gracella Runtu
 								</h3>
 								<img
-									src="https://i.ibb.co/vj0yc3j/photo.png"
+									src="https://i.ibb.co/k1HdWgc/photo-ori.png"
 									alt="photo"
 									className="h-44"
 								/>
