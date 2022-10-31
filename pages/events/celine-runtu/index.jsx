@@ -332,7 +332,7 @@ const CelineRuntu = () => {
 									Celine Gracella Runtu
 								</h3>
 								<img
-									src="https://i.ibb.co/RYDRH8x/photo.png"
+									src="https://i.ibb.co/vj0yc3j/photo.png"
 									alt="photo"
 									className="h-44"
 								/>
