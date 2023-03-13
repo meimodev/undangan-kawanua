@@ -19,6 +19,7 @@ const Wishes = ({
 	const [_wishes, _setWishes] = useState([]);
 
 	const [canSendMessage, setCanSendMessage] = useState(true);
+	const [isAlreadyCommented, setIsAlreadyCommented] = useState(false);
 
 	const onClickSend = (e) => {
 		e.preventDefault();
@@ -50,6 +51,7 @@ const Wishes = ({
 		const res = wishes.find((e) => e.from === inviteeName);
 		if (res) {
 			setCanSendMessage(false);
+			setIsAlreadyCommented(true);
 		}
 	};
 
@@ -60,11 +62,11 @@ const Wishes = ({
 				<div>
 					<div className="">
 						<label htmlFor="price" className="block text-xs text-gray-500">
-							Nama Undangan
+							Dari
 						</label>
 
 						<div className="mt-1 relative rounded-md shadow-sm ">
-							<input
+							{/* <input
 								type="text"
 								name="name"
 								id="name"
@@ -76,7 +78,14 @@ const Wishes = ({
 								value={name}
 								readOnly={true}
 								onChange={(e) => setName(e.target.value)}
-							/>
+							/> */}
+							{name ? (
+								<div className="px-3 font-bold">{name}</div>
+							) : (
+								<div className="px-3 font-thin text-xs text-gray-400">
+									Nama terisi otomatis dari url
+								</div>
+							)}
 						</div>
 					</div>
 
@@ -95,7 +104,7 @@ const Wishes = ({
 										"mt-1 block w-full px-3 py-2 duration-700 bg-white border border-gray-400 rounded-md text-sm placeholder-gray-400 " +
 										textAreaClassName
 									}
-									placeholder="Silahkan masukkan pesan ..."
+									placeholder="Silahkan masukkan pesan anda..."
 									readOnly={false}
 									value={message}
 									onChange={(e) => setMessage(e.target.value)}
@@ -118,6 +127,12 @@ const Wishes = ({
 							Kirim
 						</button>
 					</div>
+				</div>
+			) : null}
+
+			{isAlreadyCommented ? (
+				<div className="mx-4 px-2 py-2 mt-2 bg-sky-200 rounded-lg">
+					<div className="text-xs font-thin italic">Wish posted! 🎉</div>
 				</div>
 			) : null}
 

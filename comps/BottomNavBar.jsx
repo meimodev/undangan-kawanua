@@ -35,7 +35,6 @@ const BottomNavBar = ({
 	};
 
 	const handleAudioPlayPause = () => {
-		// console.log("clicked");
 		setIsPlaying(!isPlaying);
 		toggleAudio();
 	};
