@@ -43,7 +43,7 @@ const MichaelKristi = () => {
 		}, 10);
 
 		document.body.addEventListener(
-			"mousemove",
+			"mousedown",
 			() => {
 				stopScroll();
 			},
@@ -487,7 +487,7 @@ const MichaelKristi = () => {
 									<div className="px-4 ">
 										<Fade cascade>
 											<HostsSection
-												title="Michael Timoty Naftaly Sigarlaki"
+												title="Michael Timothy Naftaly Sigarlaki"
 												subTitle="Anak Tunggal"
 												caption="Bpk. Daniel Timotius Sigarlaki & Ibu. Julita Mareyke Tumonggor"
 												isLeft
@@ -574,6 +574,21 @@ const MichaelKristi = () => {
 					</div>
 
 					<div className="section px-4 mb-32" id="guests">
+						<div className="text-center mb-12">
+							<Fade>
+								<div
+									className="text-6xl pb-4 text-center text-rose-400"
+									style={primaryFontFamily}
+								>
+									Your Hosts
+								</div>
+								<div className=" text-gray-400 flex flex-col text-left">
+									<div>Keluarga Sigarlaki Kaeng</div>
+									<div>Keluarga Walangare Tumonggor</div>
+									<div>Keluarga Sepang Raranta</div>
+								</div>
+							</Fade>
+						</div>
 						<div className="text-center">
 							<Fade>
 								<div
@@ -584,7 +599,7 @@ const MichaelKristi = () => {
 								</div>
 								<div className=" text-gray-400 flex flex-col text-left">
 									<div>Keluarga Besar Sigarlaki-Turangan</div>
-									<div>Keluarga Besar Komimbin-Tumonggor</div>
+									<div>Keluarga Besar Tumonggor-Komimbin</div>
 									<div>Keluarga Christoffel-Tummonggor</div>
 									<div>Keluarga Manongko Raranta Sonly</div>
 									<div>Ibu Sonya Raranta Manongko</div>
@@ -594,9 +609,6 @@ const MichaelKristi = () => {
 									<div>Keluarga Sepang Sumilat Djhoni</div>
 									<div>Keluarga Sepang Rori Desbi</div>
 									<div>Keluarga Rori Sepang Jerri</div>
-									<div>Keluarga Sepang Raranta</div>
-									<div>Keluarga Sigarlaki Kaeng</div>
-									<div>Keluarga Walangare Tumonggor</div>
 								</div>
 							</Fade>
 						</div>
