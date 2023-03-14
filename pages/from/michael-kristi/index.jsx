@@ -26,10 +26,42 @@ const MichaelKristi = () => {
 	const handleOnMainClick = (e) => {
 		e.preventDefault();
 
-		window.open(
-			`https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20230323%2F20230324&details=https%3A%2F%2Fwww.undangankawanua.com%2Ffrom%2Fmichael-kristi%3Fto%3D${to}&location=Tounsewer&text=Wedding%20Michael%20%26%20Kristi`,
-			"_blank"
+		openLink(
+			`https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20230323%2F20230324&details=https%3A%2F%2Fwww.undangankawanua.com%2Ffrom%2Fmichael-kristi%3Fto%3D${to}&location=Tounsewer&text=Wedding%20Michael%20%26%20Kristi`
 		);
+	};
+
+	let scrollerID;
+	let shouldStopScrolling;
+	const startScroll = () => {
+		let id = setInterval(function () {
+			window.scrollBy(0, 1);
+			if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+				// end of page?
+				stopScroll();
+			}
+		}, 10);
+
+		document.body.addEventListener(
+			"mousemove",
+			() => {
+				stopScroll();
+			},
+			true
+		);
+		// window.onscroll = () => {
+		// 	if (shouldStopScrolling) {
+		// 		stopScroll();
+		// 	} else {
+		// 		shouldStopScrolling = false;
+		// 	}
+		// };
+
+		return id;
+	};
+
+	const stopScroll = () => {
+		clearInterval(scrollerID);
 	};
 
 	const openLink = (url) => {
@@ -271,6 +303,9 @@ const MichaelKristi = () => {
 				<OpenInvitation
 					onClickOpenInvitation={() => {
 						setIsOpen(true);
+						setTimeout(() => {
+							scrollerID = startScroll();
+						}, 800);
 					}}
 					builder={({ onClose }) => {
 						return (
@@ -504,7 +539,7 @@ const MichaelKristi = () => {
 						</div>
 					</div>
 
-					<div className="section  mb-32" id="wishes">
+					<div className="section mb-32" id="wishes">
 						<div className="relative">
 							<img
 								className="absolute z-0 -top-80 -right-10 opacity-50"
@@ -512,7 +547,7 @@ const MichaelKristi = () => {
 								alt="grass 1"
 							/>
 							<img
-								className="absolute z-0 -left-24 top-1 bottom-1 "
+								className="absolute z-0 -left-24 top-1 bottom-1 opacity-50"
 								src="https://i.ibb.co/1Mrpgyb/f-3.png"
 								alt="grass 2"
 							/>
@@ -538,10 +573,39 @@ const MichaelKristi = () => {
 						</div>
 					</div>
 
+					<div className="section px-4 mb-32" id="guests">
+						<div className="text-center">
+							<Fade>
+								<div
+									className="text-6xl pb-4 text-center text-rose-400"
+									style={primaryFontFamily}
+								>
+									Special Guests
+								</div>
+								<div className=" text-gray-400 flex flex-col text-left">
+									<div>Keluarga Besar Sigarlaki-Turangan</div>
+									<div>Keluarga Besar Komimbin-Tumonggor</div>
+									<div>Keluarga Christoffel-Tummonggor</div>
+									<div>Keluarga Manongko Raranta Sonly</div>
+									<div>Ibu Sonya Raranta Manongko</div>
+									<div>Keluarga Sumilat Raranta Oldi</div>
+									<div>Keluarga Raranta Kolopita Alvian</div>
+									<div>Keluarga Manorek Devi</div>
+									<div>Keluarga Sepang Sumilat Djhoni</div>
+									<div>Keluarga Sepang Rori Desbi</div>
+									<div>Keluarga Rori Sepang Jerri</div>
+									<div>Keluarga Sepang Raranta</div>
+									<div>Keluarga Sigarlaki Kaeng</div>
+									<div>Keluarga Walangare Tumonggor</div>
+								</div>
+							</Fade>
+						</div>
+					</div>
+
 					<div className="section px-4" id="footer">
-						<div className="h-full flex flex-col justify-center text-center text-gray-500 pb-10">
+						<div className="h-full flex flex-col justify-center text-center text-gray-500 pb-20">
 							<Fade cascade>
-								<h1 className="text-2xl pb-8" style={secondaryFontFamily}>
+								<h1 className="text-4xl pb-8 " style={secondaryFontFamily}>
 									Happy Wedding
 								</h1>
 								<h1
