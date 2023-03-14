@@ -2,7 +2,7 @@ import Head from "next/head";
 
 const Meta = ({ title, image, children }) => {
 	const description =
-		"buat undangan digital dengan harga terjangkau, mulai dari 200k, fully custom sesuaikan dengan keinginan anda, dengan design premium anti main-stream di bantu disainer grafis yang handal ";
+		"buat undangan digital dengan harga terjangkau, fully custom sesuaikan dengan keinginan anda, dengan design premium anti main-stream oleh disainer grafis yang handal";
 	return (
 		<Head>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />

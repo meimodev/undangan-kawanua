@@ -112,38 +112,49 @@ const MichaelKristi = () => {
 			src: imageList[0],
 			thumbnail: "",
 			thumbnailHeight: "128",
-			oriWidth: "3024",
-			oriHeight: "4032",
+			oriWidth: "2848",
+			oriHeight: "4288",
 		},
 		{
 			src: imageList[1],
 			thumbnail: "",
 			thumbnailHeight: "128",
-			oriWidth: "3024",
-			oriHeight: "4032",
+			oriWidth: "2848",
+			oriHeight: "4288",
 		},
 		{
 			src: imageList[2],
 			thumbnail: "",
 			thumbnailHeight: "128",
-			oriWidth: "3024",
-			oriHeight: "4032",
+			oriWidth: "2848",
+			oriHeight: "4288",
 		},
 		{
 			src: imageList[3],
 			thumbnail: "",
 			thumbnailHeight: "128",
-			oriWidth: "3024",
-			oriHeight: "4032",
+			oriWidth: "2848",
+			oriHeight: "4288",
 		},
 	];
-	const galleryBody = imageList.map((e) => ({
-		src: e,
-		thumbnail: "",
-		hide: true,
-		oriWidth: "3024",
-		oriHeight: "4032",
-	}));
+	const galleryBody = [
+		{
+			src: imageList[4],
+			thumbnail: "",
+			hide: true,
+			thumbnailHeight: "128",
+			oriWidth: "4288",
+			oriHeight: "2848",
+		},
+		{
+			src: imageList[5],
+			thumbnail: "",
+			hide: true,
+			thumbnailHeight: "128",
+			oriWidth: "4288",
+			oriHeight: "2848",
+		},
+	];
 
 	const bboldButton = [
 		{
@@ -175,11 +186,11 @@ const MichaelKristi = () => {
 		mapLink,
 		isLeft = false,
 	}) => (
-		<div className="flex w-full z-10 gap-4">
+		<div className="flex w-full z-10 gap-4 ">
 			{isLeft ? (
 				<i className="las la-glass-cheers text-6xl self-center"></i>
 			) : null}
-			<div className="text-gray-500 px-1">
+			<div className="text-gray-400 px-1">
 				<h2
 					className="font-bold text-3xl pb-2 text-rose-400"
 					style={primaryFontFamily}
@@ -255,7 +266,7 @@ const MichaelKristi = () => {
 			<_BuildHead />
 			<div
 				style={secondaryFontFamily}
-				className="cursor-default scroll-smooth bg-[url(https://i.ibb.co/FbJT13r/BG.jpg)] bg-repeat-y lg:bg-cover "
+				className="cursor-default scroll-smooth bg-[url(https://i.ibb.co/FbJT13r/BG.jpg)] bg-repeat-y  overflow-hidden"
 			>
 				<OpenInvitation
 					onClickOpenInvitation={() => {
@@ -263,12 +274,22 @@ const MichaelKristi = () => {
 					}}
 					builder={({ onClose }) => {
 						return (
-							<div className="text-center h-screen flex flex-col justify-center items-center bg-cover bg-sky-100/75 relative">
-								{/* <img
-									className="absolute z-10 sm:max-w-lg"
-									src="https://i.ibb.co/VmX5Lxx/celine-runtu-6.jpg"
+							<div className="text-center h-screen flex flex-col overflow-hidden justify-center items-center bg-cover bg-[url(https://i.ibb.co/FbJT13r/BG.jpg)] relative">
+								<img
+									className="absolute z-10 -left-16 bottom-0  h-80"
+									src="https://i.ibb.co/ZVZWg4J/f-7.png"
 									alt="frame"
-								/> */}
+								/>
+								<img
+									className="absolute z-10 right-0 bottom-0  h-64"
+									src="https://i.ibb.co/C2X0cMc/f-8.png"
+									alt="frame"
+								/>
+								<img
+									className="absolute z-10 -right-10 top-0  h-80"
+									src="https://i.ibb.co/VvQ17Tz/f-5.png"
+									alt="frame"
+								/>
 								<div className="z-50">
 									<div className="text-3xl text-gray-600 font-thin pb-6">
 										Save The Date
@@ -284,7 +305,7 @@ const MichaelKristi = () => {
 									</div>
 
 									<div
-										className="my-6 text-gray-400"
+										className="my-6 pt-6 text-gray-400"
 										style={secondaryFontFamily}
 									>
 										<div className="text-sm">Kepada Yth</div>
@@ -309,62 +330,18 @@ const MichaelKristi = () => {
 					}}
 				/>
 				<div className="max-w-lg mx-auto" id="main">
-					{/* <div className="h-screen section " id="top">
-						<Top
-							eventDate={"12/12/2022"}
-							className="h-full flex items-center flex-col justify-center relative"
-						>
-							<img
-								className="absolute z-10 px-2 sm:p-20"
-								src="https://i.ibb.co/YdB9nzr/frame.png"
-								alt="frame"
-							/>
-							<img
-								className="absolute z-20  sm:p-24"
-								src="https://i.ibb.co/3ND7Jfy/top-butterfly.png"
-								alt="frame butterfly"
-							/>
-							<Fade cascade>
-								<div
-									className="text-rose-400 text-center text-2xl font-thin "
-									style={thirdFontFamily}
-								>
-									<div>Ibadah Baptisan</div>
-									<div className="text-lg">dan</div>
-									<div> Ibadah Anak</div>
-								</div>
-								<img
-									src="https://i.ibb.co/tZ01HTW/divider.png"
-									alt="divider"
-									className="w-44 py-2"
-								/>
-								<h3
-									className="text-rose-400 text-center text-[2.5rem] mb-4 font-bold drop-shadow-[0_3px_0.5px_rgba(254,205,211,1)] "
-									style={primaryFontFamily}
-								>
-									Celine Gracella Runtu
-								</h3>
-								<img
-									src="https://i.ibb.co/k1HdWgc/photo-ori.png"
-									alt="photo"
-									className="h-44"
-								/>
-							</Fade>
-						</Top>
-					</div> */}
-
 					<div className="section mb-32 px-4" id="countdown">
 						<div className="flex flex-col items-center">
 							<div className="section relative bg-[url(https://i.ibb.co/vHvqHq8/DSC-0018-min.jpg)] h-screen w-screen bg-cover bg-center bg-no-repeat">
-								<div className="absolute bottom-0 left-0 right-0 h-3/4 w-full bg-gradient-to-b from-transparent via-yellow-300/20 to-yellow-300/70" />
+								<div className="absolute bottom-0 left-0 right-0 h-3/4 w-full bg-gradient-to-b from-transparent via-gray-300/20 to-white/100" />
 
 								<div
 									style={primaryFontFamily}
-									className="absolute top-8 w-full text-6xl text-red-500 flex flex-col items-center"
+									className="absolute top-8 w-full text-5xl text-white flex flex-col items-center"
 								>
 									Michael & Kristi
 								</div>
-								<div className="absolute bottom-0 w-full flex flex-col items-center pb-20">
+								<div className="absolute bottom-0 w-full flex flex-col items-center h-1/3">
 									<Countdown
 										eventDate={"03/23/2023"}
 										builder={({ timeLeft }) => (
@@ -373,16 +350,22 @@ const MichaelKristi = () => {
 												className="mb-5 font-thin"
 											>
 												<div className="flex text-sm text-gray-500">
-													<div className="w-16 h-16 flex flex-col justify-center border-x-rose-400 border-x-[0.5px] items-center">
-														<div className="font-bold">{timeLeft.days}</div>
+													<div className="w-16 h-16 flex flex-col justify-center border-x-rose-300 border-x-[1px] items-center">
+														<div className="font-bold text-md">
+															{timeLeft.days}
+														</div>
 														<div className="text-xs">hari</div>
 													</div>
-													<div className="w-16 h-16 flex flex-col justify-center border-x-rose-400  items-center">
-														<div className="font-bold">{timeLeft.hours}</div>
+													<div className="w-16 h-16 flex flex-col justify-center border-x-rose-300 border-x-[1px] items-center">
+														<div className="font-bold text-md">
+															{timeLeft.hours}
+														</div>
 														<div className="text-xs">jam</div>
 													</div>
-													<div className="w-16 h-16 flex flex-col justify-center border-x-rose-400 border-x-[0.5px] items-center">
-														<div className="font-bold">{timeLeft.minutes}</div>
+													<div className="w-16 h-16 flex flex-col justify-center border-x-rose-300 border-x-[1px] items-center">
+														<div className="font-bold text-md">
+															{timeLeft.minutes}
+														</div>
 														<div className="text-xs">menit</div>
 													</div>
 												</div>
@@ -390,7 +373,7 @@ const MichaelKristi = () => {
 										)}
 									/>
 									<button
-										className="bg-rose-400 px-4 py-2 rounded-lg text-white text-xs shadow-lg"
+										className="bg-rose-400 px-4 py-1 rounded-lg text-white text-xs shadow-lg"
 										onClick={handleOnMainClick}
 									>
 										<div className="flex justify-center items-center">
@@ -408,12 +391,12 @@ const MichaelKristi = () => {
 							builder={() => (
 								<div className="h-full flex flex-col items-center justify-center text-center relative gap-12">
 									<img
-										className="absolute z-0 right-0 top-0 "
+										className="absolute z-0 right-0 top-0 opacity-60"
 										src="https://i.ibb.co/jLjbRvP/f-1.png"
 										alt="frame"
 									/>
 									<img
-										className="absolute z-0 -bottom-48 left-1   rotate-180"
+										className="absolute z-0 -bottom-48 -left-20   rotate-180 opacity-50"
 										src="https://i.ibb.co/W60W4wD/glitter-1.png"
 										alt="glitter"
 									/>
@@ -442,7 +425,7 @@ const MichaelKristi = () => {
 					<div className="section px-4 mb-32" id="quote">
 						<div className="text-center">
 							<Fade cascade>
-								<div className="px-4 py-1 text-gray-500 text-sm italic">
+								<div className="px-4 py-1 text-gray-400 text-sm italic">
 									&quot;Kasih TUHAN membuat segala sesuatu indah pada waktu-Nya
 									Ia yang mempertemukan dan akan menyatukan kami dalam ikatan
 									pernikahan yang kudus&quot;
@@ -495,12 +478,12 @@ const MichaelKristi = () => {
 					<div className=" section mb-32" id="gallery">
 						<div className="relative h-full ">
 							<img
-								className="absolute z-0 right-0 bottom-2  "
+								className="absolute z-0 right-0 bottom-2 opacity-50"
 								src="https://i.ibb.co/W60W4wD/glitter-1.png"
 								alt="grass 1"
 							/>
 							<img
-								className="absolute z-0 top-1 "
+								className="absolute z-0 top-1 opacity-50"
 								src="https://i.ibb.co/4pjd22P/glitter-2.png"
 								alt="grass 2"
 							/>
@@ -524,7 +507,7 @@ const MichaelKristi = () => {
 					<div className="section  mb-32" id="wishes">
 						<div className="relative">
 							<img
-								className="absolute z-0 -top-80 right-0 "
+								className="absolute z-0 -top-80 -right-10 opacity-50"
 								src="https://i.ibb.co/W60W4wD/glitter-1.png"
 								alt="grass 1"
 							/>
@@ -562,7 +545,7 @@ const MichaelKristi = () => {
 									Happy Wedding
 								</h1>
 								<h1
-									className="text-5xl pb-24 text-rose-400 font-thin"
+									className="text-5xl pb-24 text-rose-400 drop-shadow-2xl  font-thin"
 									style={primaryFontFamily}
 								>
 									Michael & Kristi
@@ -579,8 +562,8 @@ const MichaelKristi = () => {
 					title={""}
 					howl={howl}
 					links={[]}
-					className="fixed -bottom-1 right-0 z-40 mx-2"
-					classNamePlayer="bg-rose-400 p-2 flex gap-1 rounded-xl mb-4 text-gray-100 "
+					className="fixed bottom-3 right-3 z-40 mx-2"
+					classNamePlayer="bg-rose-400 p-2 flex rounded-xl mb-4 text-white "
 				/>
 			</div>
 		</div>
