@@ -17,7 +17,7 @@ import { useState, useEffect } from "react";
 import { Fade } from "react-awesome-reveal";
 import { Howl } from "howler";
 
-const CelineRuntu = () => {
+const AnnoraRompas = () => {
 	const { to } = useRouter().query;
 
 	const handleOnMainClick = (e) => {
@@ -524,4 +524,4 @@ const CelineRuntu = () => {
 	);
 };
 
-export default CelineRuntu;
+export default AnnoraRompas;
