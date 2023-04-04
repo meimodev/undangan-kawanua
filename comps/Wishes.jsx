@@ -11,6 +11,7 @@ const Wishes = ({
 	sendButtonClassName = "",
 	textAreaClassName = "",
 	wishesBoxClassName = "",
+					fromTextClassName = "",
 }) => {
 	const [name, setName] = useState("");
 	const [message, setMessage] = useState("");
@@ -65,20 +66,7 @@ const Wishes = ({
 							Dari
 						</label>
 
-						<div className="mt-1 relative rounded-md shadow-sm ">
-							{/* <input
-								type="text"
-								name="name"
-								id="name"
-								className={
-									"mt-1 block w-full px-3 py-2 duration-700 bg-white border border-gray-400 rounded-md text-sm placeholder-gray-400 " +
-									textAreaClassName
-								}
-								placeholder="Nama di isi otomatis dari url undangan"
-								value={name}
-								readOnly={true}
-								onChange={(e) => setName(e.target.value)}
-							/> */}
+						<div className={`mt-1 relative rounded-md shadow-sm ${fromTextClassName}`}>
 							{name ? (
 								<div className="px-3 font-bold">{name}</div>
 							) : (

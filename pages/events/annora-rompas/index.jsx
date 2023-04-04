@@ -23,7 +23,7 @@ const AnnoraRompas = () => {
     const handleOnMainClick = (e) => {
         e.preventDefault();
         window.open(
-            "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Annora%20Rompas%20Ibadah%20Ulang%20Tahun&dates=20230409/20230409&details=Ibadah%20Ulang%20Tahun%20Pukul%2015:00%20WITA&location=1.300046,%20124.906259&trp=true",
+            "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Annora%20Rompas%20Ibadah%20Ulang%20Tahun&dates=20230409/20230409&details=Ibadah%20Ulang%20Tahun%20Pukul%2015:00%20WITA&location=1.329281123271697,%20124.8452859565837&trp=true",
             "_blank"
         );
     };
@@ -51,7 +51,7 @@ const AnnoraRompas = () => {
     };
 
     const handleOnEventClick = () => {
-        openLink("")
+        openLink("https://goo.gl/maps/FRVTLzw9655tatuU9")
     }
 
     useEffect(() => {
@@ -78,29 +78,41 @@ const AnnoraRompas = () => {
     };
 
     const imageList = [
-
-
-        "https://i.ibb.co/1KLXNLH/celine-runtu-1.jpg",
-        "https://i.ibb.co/NNCBTrL/celine-runtu-2.jpg",
-        "https://i.ibb.co/fvdRh1D/celine-runtu-3.jpg",
-        "https://i.ibb.co/ZxWBC0m/celine-runtu-4.jpg",
-        "https://i.ibb.co/4PzkLBR/celine-runtu-5.jpg",
-        "https://i.ibb.co/VmX5Lxx/celine-runtu-6.jpg",
-        "https://i.ibb.co/Bw91XcM/celine-runtu-7.jpg",
-        "https://i.ibb.co/n68LLxx/celine-runtu-8.jpg",
-        "https://i.ibb.co/2S1p0XQ/celine-runtu-9.jpg",
-        "https://i.ibb.co/f0WY2Zy/celine-runtu-10.jpg",
-        "https://i.ibb.co/XSxTbQj/celine-runtu-11.jpg",
-        "https://i.ibb.co/Q9MKYcF/celine-runtu-12.jpg",
-        "https://i.ibb.co/2PRJr4m/celine-runtu-13.jpg",
-        "https://i.ibb.co/c1Bfm63/celine-runtu-14.jpg",
-        "https://i.ibb.co/k2s4QN8/celine-runtu-15.jpg",
-        "https://i.ibb.co/ZJ3FNDc/celine-runtu-16.jpg",
-        "https://i.ibb.co/RQCCtN6/celine-runtu-17.jpg",
+        "https://i.ibb.co/SNtdmvK/gallery-1.jpg",
+        "https://i.ibb.co/PjmS2sC/gallery-2.jpg",
+        "https://i.ibb.co/TLKSfhm/gallery-3.jpg",
+        "https://i.ibb.co/0yP0CwB/gallery-4.jpg",
+        "https://i.ibb.co/BBpfq6H/gallery-5.jpg",
+        "https://i.ibb.co/G9nqtR4/gallery-6.jpg",
+        "https://i.ibb.co/jTHn1hX/gallery-7.jpg",
+        "https://i.ibb.co/tK0vBJL/gallery-8.jpg",
+        "https://i.ibb.co/p2Kwhq7/gallery-9.jpg",
+        "https://i.ibb.co/mhKzJC2/gallery-10.jpg",
+        "https://i.ibb.co/PcHpQht/gallery-11.jpg",
+        "https://i.ibb.co/C8smVP0/gallery-12.jpg",
+        "https://i.ibb.co/Ns9vB0H/gallery-13.jpg",
+        "https://i.ibb.co/k09cX4V/gallery-14.jpg",
+        "https://i.ibb.co/PZjd2FN/gallery-15.jpg",
+        "https://i.ibb.co/SNbnxvk/gallery-16.jpg",
+        "https://i.ibb.co/pd3SwMD/gallery-17.jpg",
+        "https://i.ibb.co/pK6Kfws/gallery-18.jpg",
+        "https://i.ibb.co/Hg9Myvz/gallery-19.jpg",
+        "https://i.ibb.co/0KgVg7r/gallery-20.jpg",
+        "https://i.ibb.co/ZMQHKPB/gallery-21.jpg",
+        "https://i.ibb.co/HzNW0Gg/gallery-24.jpg",
+        "https://i.ibb.co/1zf5ZHV/gallery-25.jpg",
+        "https://i.ibb.co/fHTBjYL/gallery-26.jpg",
+        "https://i.ibb.co/NV7tqWg/gallery-27.jpg",
+        "https://i.ibb.co/CwQGQkz/gallery-28.jpg",
+        "https://i.ibb.co/Kq3SdqL/gallery-29.jpg",
+        "https://i.ibb.co/vB7wZZL/gallery-30.jpg",
+        "https://i.ibb.co/g4CfgsC/gallery-31.jpg",
+        "https://i.ibb.co/BGk269Y/gallery-32.jpg",
+        "https://i.ibb.co/MhsGyLx/gallery-33.jpg",
     ];
 
     const _BuildHead = () => (
-        <Meta title="Celine Runtu | 6 November 2022" image={imageList[11]}>
+        <Meta title="Annora Rompas | 9 April 2023" image={imageList[0]}>
             <link
                 rel="stylesheet"
                 href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
@@ -120,59 +132,258 @@ const AnnoraRompas = () => {
 
     const primaryFontFamily = {fontFamily: "New Rocker"};
     const secondaryFontFamily = {fontFamily: "Cinzel Decorative"};
-    const thirdFontFamily = {fontFamily: "Parisienne"};
 
     const galleryHead = [
         {
             src: imageList[0],
             thumbnail: "",
             thumbnailHeight: "128",
-            oriWidth: "3024",
-            oriHeight: "4032",
-        },
-        {
-            src: imageList[12],
-            thumbnail: "",
-            thumbnailHeight: "128",
-            oriWidth: "3024",
-            oriHeight: "4032",
+            oriWidth: "4090",
+            oriHeight: "3272",
         },
         {
             src: imageList[1],
             thumbnail: "",
             thumbnailHeight: "128",
-            oriWidth: "3024",
-            oriHeight: "4032",
+            oriWidth: "3987",
+            oriHeight: "4984",
+        },
+        {
+            src: imageList[2],
+            thumbnail: "",
+            thumbnailHeight: "128",
+            oriWidth: "720",
+            oriHeight: "1280",
         },
         {
             src: imageList[3],
             thumbnail: "",
             thumbnailHeight: "128",
-            oriWidth: "3024",
-            oriHeight: "4032",
+            oriWidth: "2024",
+            oriHeight: "3442",
         },
+
+    ];
+    const galleryBody = [
         {
             src: imageList[4],
             thumbnail: "",
+            hide: true,
             thumbnailHeight: "128",
-            oriWidth: "3024",
-            oriHeight: "4032",
+            oriWidth: "720",
+            oriHeight: "1280",
         },
         {
             src: imageList[5],
             thumbnail: "",
+            hide: true,
             thumbnailHeight: "128",
-            oriWidth: "3024",
-            oriHeight: "4032",
+            oriWidth: "1200",
+            oriHeight: "1600",
         },
+        {
+            src: imageList[6],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "640",
+            oriHeight: "475",
+        },
+        {
+            src: imageList[7],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "3987",
+            oriHeight: "4984",
+        },
+        {
+            src: imageList[8],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "640",
+            oriHeight: "480",
+        },
+        {
+            src: imageList[9],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "1029",
+            oriHeight: "1280",
+        },
+        {
+            src: imageList[10],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "849",
+            oriHeight: "1280",
+        },
+        {
+            src: imageList[11],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "960",
+            oriHeight: "1280",
+        },
+        {
+            src: imageList[12],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "640",
+            oriHeight: "564",
+        },
+        {
+            src: imageList[13],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "964",
+            oriHeight: "1280",
+        },
+        {
+            src: imageList[14],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "853",
+            oriHeight: "1280",
+        },
+        {
+            src: imageList[15],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "640",
+            oriHeight: "480",
+        },
+        {
+            src: imageList[16],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "849",
+            oriHeight: "1280",
+        },
+        {
+            src: imageList[17],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "1030",
+            oriHeight: "1280",
+        },
+        {
+            src: imageList[18],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "540",
+            oriHeight: "960",
+        },
+        {
+            src: imageList[19],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "1080",
+            oriHeight: "799",
+        },
+        {
+            src: imageList[20],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "2250",
+            oriHeight: "4000",
+        },
+        {
+            src: imageList[21],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "2175",
+            oriHeight: "3719",
+        },
+        {
+            src: imageList[22],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "2202",
+            oriHeight: "3538",
+        },
+        {
+            src: imageList[23],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "1080",
+            oriHeight: "1920",
+        },
+        {
+            src: imageList[24],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "1200",
+            oriHeight: "1600",
+        },
+        {
+            src: imageList[25],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "1080",
+            oriHeight: "708",
+        },
+        {
+            src: imageList[26],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "818",
+            oriHeight: "1280",
+        },
+        {
+            src: imageList[27],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "2250",
+            oriHeight: "4000",
+        },
+        {
+            src: imageList[28],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "906",
+            oriHeight: "1280",
+        },
+        {
+            src: imageList[29],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "3934",
+            oriHeight: "4918",
+        },
+        {
+            src: imageList[30],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "4961",
+            oriHeight: "4134",
+        },
+
     ];
-    const galleryBody = imageList.map((e) => ({
-        src: e,
-        thumbnail: "",
-        hide: true,
-        oriWidth: "3024",
-        oriHeight: "4032",
-    }));
+
 
     const bboldButton = [
         {
@@ -195,56 +406,6 @@ const AnnoraRompas = () => {
             ),
         },
     ];
-
-    const EventsSection = ({
-                               title,
-                               date,
-                               time,
-                               location,
-                               mapLink,
-                               isLeft = false,
-                           }) => (
-        <div className="flex flex-col w-full z-10">
-            {isLeft ? (
-                <img
-                    src="https://i.ibb.co/48p3QdF/photo-left.png"
-                    alt="photo-left"
-                    className="mb-16"
-                />
-            ) : null}
-            <div className="text-gray-500 px-1">
-                <h2
-                    className="font-bold text-2xl text-rose-400"
-                    style={primaryFontFamily}
-                >
-                    {title}
-                </h2>
-                <div className="text-xs pb-2">
-                    <div>
-                        {date} {" | "}
-                        <span className="font-bold text-rose-400">{time}</span>
-                    </div>
-                    <div>{location}</div>
-                </div>
-                <button
-                    className="border bg-rose-400 p-1.5 px-3 rounded-lg text-white font-thin z-10 shadow-lg"
-                    onClick={() => openLink(mapLink)}
-                >
-                    <div className="flex justify-center items-center">
-                        <i className="las la-map-marker text-sm pr-0.5"></i>
-                        <span className="text-xs">Maps</span>
-                    </div>
-                </button>
-            </div>
-            {isLeft ? null : (
-                <img
-                    src="https://i.ibb.co/qmGvjWm/photo-right.png"
-                    alt="photo-right"
-                    className="mt-16"
-                />
-            )}
-        </div>
-    );
 
     const galleryPhotos = [...galleryHead, ...galleryBody, ...bboldButton];
 
@@ -313,13 +474,13 @@ const AnnoraRompas = () => {
                             eventDate={"12/12/2022"}
                             className="h-full flex items-center flex-col justify-center relative"
                         >
-                            {/*<img*/}
-                            {/*    className="absolute z-10 px-2 sm:p-20"*/}
-                            {/*    src="https://i.ibb.co/YdB9nzr/frame.png"*/}
-                            {/*    alt="frame"*/}
-                            {/*/>*/}
+                            <img
+                                className="absolute z-10 h-[23rem] pt-10    top-1/3 opacity-30"
+                                src="https://i.ibb.co/C5Vq0G9/anim2.gif"
+                                alt="frame"
+                            />
 
-                            <Fade cascade>
+                            <Fade cascade className="z-20">
                                 <div
                                     className="text-gray-200 text-center text-4xl font-thin "
                                     style={primaryFontFamily}
@@ -386,16 +547,17 @@ const AnnoraRompas = () => {
                     </div>
 
                     <div className="h-screen section sm:mt-10" id="event">
-                        {/*<img*/}
-                        {/*    className="absolute z-0 p-10"*/}
-                        {/*    src="https://i.ibb.co/RQDZ4Bf/event-butterfly.png"*/}
-                        {/*    alt="frame"*/}
-                        {/*/>*/}
+
                         <EventInfo
                             builder={() => (
                                 <div
                                     className="h-full flex flex-col items-center justify-center text-center relative text-white">
-                                    <Fade cascade>
+                                    <img
+                                        className="absolute z-10 h-[15rem] top-1/3 opacity-30"
+                                        src="https://i.ibb.co/BVKjsKR/anim3.gif"
+                                        alt="frame"
+                                    />
+                                    <Fade cascade className="z-20">
 
 
                                         <div
@@ -404,7 +566,6 @@ const AnnoraRompas = () => {
                                             Event
                                         </div>
                                         <CustomDivider/>
-
 
 
                                         <div className="pb-4">
@@ -484,11 +645,7 @@ const AnnoraRompas = () => {
                     <Fade cascade>
                         <div className=" section px-4 sm:px-20 sm:mt-10 " id="gallery">
                             <div className="relative h-full">
-                                {/*<img*/}
-                                {/*    className="absolute -z-10 p-0 -left-24 -top-10"*/}
-                                {/*    src="https://i.ibb.co/WDKLzpZ/grass-1.png"*/}
-                                {/*    alt="grass 1"*/}
-                                {/*/>*/}
+
                                 <CustomGallery
                                     images={galleryPhotos}
                                     title={
@@ -515,18 +672,19 @@ const AnnoraRompas = () => {
                             id="wishes"
                         >
                             <div className="relative">
-                                {/*<img*/}
-                                {/*    className="absolute -z-10 p-0  -top-10"*/}
-                                {/*    src="https://i.ibb.co/3ND7Jfy/top-butterfly.png"*/}
-                                {/*    alt="butterfly"*/}
-                                {/*/>*/}
+                                <img
+                                    className="absolute -z-10 bottom-1/3 opacity-30"
+                                    src="https://i.ibb.co/G5t4bwj/anim1.gif"
+                                    alt="anim1"
+                                />
                                 <Wishes
                                     inviteeName={to}
                                     onNewWishes={handleOnNewWishes}
                                     wishes={wishesData.wishes}
                                     enable={wishesData.enable}
-                                    sendButtonClassName=" text-white bg-rose-400"
-                                    textAreaClassName=" focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400"
+                                    sendButtonClassName="text-white bg-transparent border-[1px] "
+                                    fromTextClassName="text-white"
+                                    textAreaClassName=" bg-transparent text-white focus:outline-none focus:border-white focus:ring-1 focus:ring-white"
                                     wishesBoxClassName="text-white border-b-[1px] border-gray-200 p-3 rounded-md my-4"
                                     title={
                                         <div className="flex flex-col items-center py-4 ">
@@ -558,19 +716,24 @@ const AnnoraRompas = () => {
                                 </h1>
 
                                 <CustomDivider/>
-                                <h1 className="text-xl mt-4 pt-10" style={secondaryFontFamily}>
-                                    Blessed Parents
+                                <h1 className="text-xl mt-4 pt-10 pb-2" style={secondaryFontFamily}>
+                                    Blessed Family
                                 </h1>
-                                <h1
-                                    className="text-4xl text-white font-thin"
+                                <div
+                                    className="text-3xl text-white font-thin pb-2"
                                     style={primaryFontFamily}
                                 >
-                                    Glo & Pasangan
-                                </h1>
+                                    <div>
+                                        Papa Fano - Mama Glo
+                                    </div>
+                                    <div>
+                                        Kakak Azael
+                                    </div>
+                                </div>
 
                                 <img
                                     className="py-2 pt-4"
-                                    src="https://i.ibb.co/ggynKn3/parents.jpg"
+                                    src="https://i.ibb.co/0B5VqzV/parent.jpg"
                                     alt="parents"
                                 />
 
