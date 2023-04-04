@@ -35,15 +35,14 @@ const AnnoraRompas = () => {
     const openBboldLink = () => {
         const bboldPhone = "+6285756681077";
         const host = "annora-rompas-birthday";
-        const name = to;
-        const url = `https://api.whatsapp.com/send?phone=${bboldPhone}&text=undangankawanua.com%2Ffrom%2F${host}%3Ffrom%3D${name}%26bbold_token%3ey5V225sjfA5sFG34A9fS7fg`;
+        const url = `https://api.whatsapp.com/send?phone=${bboldPhone}&text=undangankawanua.com%2Ffrom%2F${host}%3Ffrom%3D${to}%26bbold_token%3ey5V225sjfA5sFG34A9fS7fg`;
 
         openLink(url);
     };
 
     const handleOnNewWishes = async (wishes) => {
         const envHost = "annora-rompas-birthday";
-        const updateResult = await firestoreUpdateDocData(
+         await firestoreUpdateDocData(
             `${envHost}/wishes`,
             "wishes",
             wishes
@@ -63,7 +62,6 @@ const AnnoraRompas = () => {
         enable: true,
     });
     const [music, setMusic] = useState([]);
-    const [photos, setPhotos] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
 
     const fetchData = async () => {
@@ -135,19 +133,14 @@ const AnnoraRompas = () => {
 
     const galleryHead = [
         {
-            src: imageList[0],
+            src: imageList[4],
             thumbnail: "",
             thumbnailHeight: "128",
-            oriWidth: "4090",
-            oriHeight: "3272",
+            oriWidth: "720",
+            oriHeight: "1280",
         },
-        {
-            src: imageList[1],
-            thumbnail: "",
-            thumbnailHeight: "128",
-            oriWidth: "3987",
-            oriHeight: "4984",
-        },
+
+
         {
             src: imageList[2],
             thumbnail: "",
@@ -162,17 +155,24 @@ const AnnoraRompas = () => {
             oriWidth: "2024",
             oriHeight: "3442",
         },
-
+        {
+            src: imageList[1],
+            thumbnail: "",
+            thumbnailHeight: "128",
+            oriWidth: "3987",
+            oriHeight: "4984",
+        },
     ];
     const galleryBody = [
         {
-            src: imageList[4],
+            src: imageList[0],
             thumbnail: "",
             hide: true,
             thumbnailHeight: "128",
-            oriWidth: "720",
-            oriHeight: "1280",
+            oriWidth: "4090",
+            oriHeight: "3272",
         },
+
         {
             src: imageList[5],
             thumbnail: "",
@@ -495,12 +495,11 @@ const AnnoraRompas = () => {
                                     style={secondaryFontFamily}
                                 >
                                     Annora Azaela Glorielle Rompas
-
                                 </h3>
                                 <img
-                                    src="https://i.ibb.co/SyXMb5v/center-photo-1.png"
+                                    src="https://i.ibb.co/hgrVkX3/center-photo-1.png"
                                     alt="photo"
-                                    className="h-56"
+                                    className="max-h-96"
                                 />
                             </Fade>
                         </Top>
@@ -578,9 +577,9 @@ const AnnoraRompas = () => {
                                         </div>
 
                                         <img
-                                            src="https://i.ibb.co/vYRMQhb/center-photo-2.png"
+                                            src="https://i.ibb.co/2czMvvQ/center-photo-2.png"
                                             alt="photo"
-                                            className="h-52"
+                                            className="h-72"
                                         />
 
                                         <div className="pt-8 pb-4">
@@ -642,15 +641,14 @@ const AnnoraRompas = () => {
                         </div>
                     </div>
 
-                    <Fade cascade>
-                        <div className=" section px-4 sm:px-20 sm:mt-10 " id="gallery">
-                            <div className="relative h-full">
+                    <div className="section sm:mt-10 h-screen " id="gallery">
+                        <div className="relative h-full">
+                            <Fade cascade>
 
                                 <CustomGallery
                                     images={galleryPhotos}
                                     title={
                                         <div className="flex flex-col items-center py-4 mb-8">
-
                                             <div
                                                 className="text-6xl  text-center text-white"
                                                 style={primaryFontFamily}
@@ -662,16 +660,13 @@ const AnnoraRompas = () => {
                                         </div>
                                     }
                                 />
-                            </div>
+                            </Fade>
                         </div>
-                    </Fade>
+                    </div>
 
-                    <Fade cascade>
-                        <div
-                            className="section px-4 flex flex-col mt-20 sm:mt-28"
-                            id="wishes"
-                        >
-                            <div className="relative">
+                    <div className="section px-4 mt-[27rem] sm:mt-28" id="wishes">
+                        <div className="relative">
+                            <Fade cascade>
                                 <img
                                     className="absolute -z-10 bottom-1/3 opacity-30"
                                     src="https://i.ibb.co/G5t4bwj/anim1.gif"
@@ -698,9 +693,9 @@ const AnnoraRompas = () => {
                                         </div>
                                     }
                                 />
-                            </div>
+                            </Fade>
                         </div>
-                    </Fade>
+                    </div>
 
                     <div
                         className="section px-4 bg-gradient-to-b from-transparent to-fuchsia-900/50"
@@ -750,7 +745,7 @@ const AnnoraRompas = () => {
                     howl={howl}
                     links={[]}
                     className="fixed -bottom-1 right-0 z-40 mx-2"
-                    classNamePlayer=" bg-black bg-opacity-75 border-[1px] p-2 flex gap-1 rounded-sm mb-4 text-gray-100 "
+                    classNamePlayer="bg-black bg-opacity-75 border-[1px] p-2 flex gap-1 rounded-sm mb-4 text-gray-100 "
                 />
             </div>
         </div>
