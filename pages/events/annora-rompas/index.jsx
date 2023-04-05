@@ -133,19 +133,20 @@ const AnnoraRompas = () => {
 
     const galleryHead = [
 
+
+        {
+            src: imageList[30],
+            thumbnail: "",
+            thumbnailHeight: "128",
+            oriWidth: "4961",
+            oriHeight: "4134",
+        },
         {
             src: imageList[0],
             thumbnail: "",
             thumbnailHeight: "128",
             oriWidth: "4090",
             oriHeight: "3272",
-        },
-        {
-            src: imageList[15],
-            thumbnail: "",
-            thumbnailHeight: "128",
-            oriWidth: "640",
-            oriHeight: "480",
         },
         {
             src: imageList[1],
@@ -164,14 +165,7 @@ const AnnoraRompas = () => {
         },
     ];
     const galleryBody = [
-        {
-            src: imageList[3],
-            thumbnail: "",
-            thumbnailHeight: "128",
-            hide: true,
-            oriWidth: "2024",
-            oriHeight: "3442",
-        },
+
         {
             src: imageList[4],
             thumbnail: "",
@@ -180,7 +174,14 @@ const AnnoraRompas = () => {
             oriWidth: "720",
             oriHeight: "1280",
         },
-
+        {
+            src: imageList[3],
+            thumbnail: "",
+            thumbnailHeight: "128",
+            hide: true,
+            oriWidth: "2024",
+            oriHeight: "3442",
+        },
         {
             src: imageList[5],
             thumbnail: "",
@@ -204,6 +205,14 @@ const AnnoraRompas = () => {
             thumbnailHeight: "128",
             oriWidth: "3987",
             oriHeight: "4984",
+        },
+        {
+            src: imageList[15],
+            thumbnail: "",
+            hide: true,
+            thumbnailHeight: "128",
+            oriWidth: "640",
+            oriHeight: "480",
         },
         {
             src: imageList[8],
@@ -375,14 +384,7 @@ const AnnoraRompas = () => {
             oriWidth: "720",
             oriHeight: "1280",
         },
-        {
-            src: imageList[30],
-            thumbnail: "",
-            hide: true,
-            thumbnailHeight: "128",
-            oriWidth: "4961",
-            oriHeight: "4134",
-        },
+
 
     ];
 
@@ -417,11 +419,12 @@ const AnnoraRompas = () => {
         loop: true,
         // autoplay: true,
     });
+
     const CustomDivider = () => <img
         src="https://i.ibb.co/FXYSmkV/divider.png"
         alt="divider"
         className="w-48 py-4"
-    />;
+    />
 
     return (
         <div>
