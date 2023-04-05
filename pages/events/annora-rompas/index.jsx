@@ -42,7 +42,7 @@ const AnnoraRompas = () => {
 
     const handleOnNewWishes = async (wishes) => {
         const envHost = "annora-rompas-birthday";
-         await firestoreUpdateDocData(
+        await firestoreUpdateDocData(
             `${envHost}/wishes`,
             "wishes",
             wishes
@@ -132,28 +132,20 @@ const AnnoraRompas = () => {
     const secondaryFontFamily = {fontFamily: "Cinzel Decorative"};
 
     const galleryHead = [
-        {
-            src: imageList[4],
-            thumbnail: "",
-            thumbnailHeight: "128",
-            oriWidth: "720",
-            oriHeight: "1280",
-        },
-
 
         {
-            src: imageList[2],
+            src: imageList[0],
             thumbnail: "",
             thumbnailHeight: "128",
-            oriWidth: "720",
-            oriHeight: "1280",
+            oriWidth: "4090",
+            oriHeight: "3272",
         },
         {
-            src: imageList[3],
+            src: imageList[15],
             thumbnail: "",
             thumbnailHeight: "128",
-            oriWidth: "2024",
-            oriHeight: "3442",
+            oriWidth: "640",
+            oriHeight: "480",
         },
         {
             src: imageList[1],
@@ -162,15 +154,31 @@ const AnnoraRompas = () => {
             oriWidth: "3987",
             oriHeight: "4984",
         },
+
+        {
+            src: imageList[29],
+            thumbnail: "",
+            thumbnailHeight: "128",
+            oriWidth: "3934",
+            oriHeight: "4918",
+        },
     ];
     const galleryBody = [
         {
-            src: imageList[0],
+            src: imageList[3],
+            thumbnail: "",
+            thumbnailHeight: "128",
+            hide: true,
+            oriWidth: "2024",
+            oriHeight: "3442",
+        },
+        {
+            src: imageList[4],
             thumbnail: "",
             hide: true,
             thumbnailHeight: "128",
-            oriWidth: "4090",
-            oriHeight: "3272",
+            oriWidth: "720",
+            oriHeight: "1280",
         },
 
         {
@@ -254,14 +262,6 @@ const AnnoraRompas = () => {
             oriHeight: "1280",
         },
         {
-            src: imageList[15],
-            thumbnail: "",
-            hide: true,
-            thumbnailHeight: "128",
-            oriWidth: "640",
-            oriHeight: "480",
-        },
-        {
             src: imageList[16],
             thumbnail: "",
             hide: true,
@@ -269,6 +269,8 @@ const AnnoraRompas = () => {
             oriWidth: "849",
             oriHeight: "1280",
         },
+
+
         {
             src: imageList[17],
             thumbnail: "",
@@ -366,12 +368,12 @@ const AnnoraRompas = () => {
             oriHeight: "1280",
         },
         {
-            src: imageList[29],
+            src: imageList[2],
             thumbnail: "",
             hide: true,
             thumbnailHeight: "128",
-            oriWidth: "3934",
-            oriHeight: "4918",
+            oriWidth: "720",
+            oriHeight: "1280",
         },
         {
             src: imageList[30],
@@ -383,7 +385,6 @@ const AnnoraRompas = () => {
         },
 
     ];
-
 
     const bboldButton = [
         {
@@ -427,7 +428,7 @@ const AnnoraRompas = () => {
             <_BuildHead/>
             <div
                 style={secondaryFontFamily}
-                className="cursor-default scroll-smooth bg-[url(https://i.ibb.co/4f8N62k/background.png)] bg-repeat-y bg-contain lg:bg-cover "
+                className="cursor-default scroll-smooth bg-[url(https://i.ibb.co/4f8N62k/background.png)] bg-repeat-y bg-contain  "
             >
                 <OpenInvitation
                     onClickOpenInvitation={() => {
@@ -436,7 +437,7 @@ const AnnoraRompas = () => {
                     builder={({onClose}) => {
                         return (
                             <div
-                                className="text-white h-screen flex flex-col justify-end  items-center overflow-hidden bg-[url(https://i.ibb.co/Ph0pNdq/opener-clean.png)] bg-cover  bg-repeat bg-center relative">
+                                className="text-white h-screen flex flex-col justify-end  items-center overflow-hidden bg-[url(https://i.ibb.co/Ph0pNdq/opener-clean.png)] bg-contain bg-center relative">
                                 {/*<img*/}
                                 {/*    className="absolute z-10 sm:max-w-lg"*/}
                                 {/*    src="https://i.gifer.com/embedded/download/ZJFD.gif"*/}
