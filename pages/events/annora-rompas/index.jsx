@@ -476,7 +476,7 @@ const AnnoraRompas = () => {
                             className="h-full flex items-center flex-col justify-center relative"
                         >
                             <img
-                                className="absolute z-10 h-[23rem] pt-10    top-1/3 opacity-30"
+                                className="absolute z-10 h-[30rem] pt-10 top-1/3 opacity-30"
                                 src="https://i.ibb.co/C5Vq0G9/anim2.gif"
                                 alt="frame"
                             />
@@ -553,7 +553,7 @@ const AnnoraRompas = () => {
                                 <div
                                     className="h-full flex flex-col items-center justify-center text-center relative text-white">
                                     <img
-                                        className="absolute z-10 h-[15rem] top-1/3 opacity-30"
+                                        className="absolute z-10 h-[25rem] top-1/3 opacity-30"
                                         src="https://i.ibb.co/BVKjsKR/anim3.gif"
                                         alt="frame"
                                     />
