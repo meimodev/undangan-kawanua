@@ -36,7 +36,6 @@ const AnnoraRompas = () => {
         const bboldPhone = "+6285756681077";
         const host = "annora-rompas-birthday";
         const url = `https://api.whatsapp.com/send?phone=${bboldPhone}&text=undangankawanua.com%2Ffrom%2F${host}%3Ffrom%3D${to}%26bbold_token%3ey5V225sjfA5sFG34A9fS7fg`;
-
         openLink(url);
     };
 

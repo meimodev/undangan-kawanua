@@ -296,7 +296,6 @@ const Page = () => {
                                         <div>Kyrie Glorious Deo Sambur</div>
                                     </div>
 
-
                                     <div
                                         className="my-6 text-gray-400"
                                         style={secondaryFontFamily}
@@ -334,13 +333,13 @@ const Page = () => {
                                 alt="Spiderweb background"
                             />
                             <img
-                                className="absolute z-0 w-64 -left-20 top-28 opacity-50"
+                                className="absolute z-0 w-64 -left-20 top-28 opacity-20"
                                 src={imageAssetList[0]}
                                 alt="character top left"
                             />
                             <Fade cascade>
                                 <div
-                                    className="text-slate-500 text-center text-4xl  pt-20"
+                                    className="text-slate-500 text-center text-4xl pt-20"
                                     style={secondaryFontFamily}
                                 >
                                     <div className="text-xl">Ibadah</div>
@@ -418,13 +417,13 @@ const Page = () => {
                                             <div className="text-gray-500 px-1 relative">
 
                                                 <img
-                                                    className="absolute z-0 w-36 -left-8 top-12 opacity-50 rotate-6"
+                                                    className="absolute z-0 w-36 -left-8 top-12 opacity-20 rotate-6"
                                                     src={imageAssetList[8]}
                                                     alt="frame"
                                                 />
 
                                                 <img
-                                                    className="absolute z-0 w-36 -right-20 top-28 opacity-50 rotate-6"
+                                                    className="absolute z-0 w-36 -right-20 top-28 opacity-20 rotate-6"
                                                     src={imageAssetList[9]}
                                                     alt="frame"
                                                 />
@@ -437,7 +436,7 @@ const Page = () => {
                                                 </h2>
                                                 <div className="pt-4">
                                                     <div>
-                                                        Sabtu 29 April 2023
+                                                        Minggu 30 April 2023
 
                                                     </div>
                                                     <div className="pt-2 text-xl font-bold text-indigo-400">15:00 WITA
@@ -473,7 +472,8 @@ const Page = () => {
                                     Amsal 3 : 16
                                 </div>
                                 <div className="px-4 py-1 text-gray-500 text-sm italic">
-                                    &quot;Umur panjang ada di tangan kanan-Nya, di tangan kiri-Nya kekayaan dan kehormatan&quot;
+                                    &quot;Umur panjang ada di tangan kanan-Nya, di tangan kiri-Nya kekayaan dan
+                                    kehormatan&quot;
                                 </div>
                             </Fade>
                         </div>
@@ -508,8 +508,14 @@ const Page = () => {
                         >
                             <div className="relative">
                                 <img
-                                    className="absolute -z-10 w-[40rem] opacity-30 -right-32"
+                                    className="absolute -z-10 w-[15rem] opacity-20 -right-32 top-10"
                                     src={imageAssetList[9]}
+                                    alt="web"
+                                />
+
+                                <img
+                                    className="absolute -z-10 w-[40rem] opacity-30 -left-36 -bottom-32 rotate-45"
+                                    src={imageAssetList[2]}
                                     alt="web"
                                 />
                                 <Wishes
