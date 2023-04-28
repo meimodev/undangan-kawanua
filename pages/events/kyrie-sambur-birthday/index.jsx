@@ -439,7 +439,7 @@ const Page = () => {
                                                         Minggu 30 April 2023
 
                                                     </div>
-                                                    <div className="pt-2 text-xl font-bold text-indigo-400">15:00 WITA
+                                                    <div className="pt-2 text-xl font-bold text-indigo-400">16:00 WITA
                                                     </div>
                                                     <div className="pt-2">@ KFC Tondano</div>
                                                 </div>
