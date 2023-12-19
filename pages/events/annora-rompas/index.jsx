@@ -108,6 +108,18 @@ const AnnoraRompas = () => {
         "https://i.ibb.co/MhsGyLx/gallery-33.jpg",
     ];
 
+    const imageAssets = [
+        "https://i.ibb.co/FXYSmkV/divider.png",
+        "https://i.ibb.co/4f8N62k/background.png",
+        "https://i.ibb.co/Ph0pNdq/opener-clean.png",
+        "https://i.ibb.co/C5Vq0G9/anim2.gif",
+        "https://i.ibb.co/hgrVkX3/center-photo-1.png",
+        "https://i.ibb.co/BVKjsKR/anim3.gif",
+        "https://i.ibb.co/2czMvvQ/center-photo-2.png",
+        "https://i.ibb.co/G5t4bwj/anim1.gif",
+        "https://i.ibb.co/0B5VqzV/parent.jpg",
+    ];
+
     const _BuildHead = () => (
         <Meta title="Annora Rompas | 9 April 2023" image={imageList[0]}>
             <link
@@ -420,7 +432,7 @@ const AnnoraRompas = () => {
     });
 
     const CustomDivider = () => <img
-        src="https://i.ibb.co/FXYSmkV/divider.png"
+        src={imageAssets[0]}
         alt="divider"
         className="w-48 py-4"
     />
@@ -430,7 +442,7 @@ const AnnoraRompas = () => {
             <_BuildHead/>
             <div
                 style={secondaryFontFamily}
-                className="cursor-default scroll-smooth bg-[url(https://i.ibb.co/4f8N62k/background.png)] bg-repeat-y bg-contain  "
+                className={"cursor-default scroll-smooth bg-[url(" + imageAssets[1] + ")] bg-repeat-y bg-contain"}
             >
                 <OpenInvitation
                     onClickOpenInvitation={() => {
@@ -439,12 +451,8 @@ const AnnoraRompas = () => {
                     builder={({onClose}) => {
                         return (
                             <div
-                                className="text-white h-screen flex flex-col justify-end  items-center overflow-hidden bg-[url(https://i.ibb.co/Ph0pNdq/opener-clean.png)] bg-contain bg-center relative">
-                                {/*<img*/}
-                                {/*    className="absolute z-10 sm:max-w-lg"*/}
-                                {/*    src="https://i.gifer.com/embedded/download/ZJFD.gif"*/}
-                                {/*    alt="frame"*/}
-                                {/*/>*/}
+                                className={"text-white h-screen flex flex-col justify-end items-center overflow-hidden bg-[url(" + imageAssets[2] + ")] bg-contain bg-center relative"}>
+
                                 <div className="z-50 h-1/3 text-center">
 
                                     <div
@@ -455,7 +463,7 @@ const AnnoraRompas = () => {
                                         <div
                                             className="text-2xl pt-1 font-bold"
                                         >
-                                            {to ? to : "No Name"}
+                                            {to || "No Name"}
                                         </div>
                                     </div>
 
@@ -479,7 +487,7 @@ const AnnoraRompas = () => {
                         >
                             <img
                                 className="absolute z-10 h-[30rem] pt-10 top-1/3 opacity-30"
-                                src="https://i.ibb.co/C5Vq0G9/anim2.gif"
+                                src={imageAssets[3]}
                                 alt="frame"
                             />
 
@@ -500,8 +508,8 @@ const AnnoraRompas = () => {
                                     Annora Azaela Glorielle Rompas
                                 </h3>
                                 <img
-                                    src="https://i.ibb.co/hgrVkX3/center-photo-1.png"
-                                    alt="photo"
+                                    src={imageAssets[4]}
+                                    alt="assets 4"
                                     className="max-h-96"
                                 />
                             </Fade>
@@ -556,7 +564,7 @@ const AnnoraRompas = () => {
                                     className="h-full flex flex-col items-center justify-center text-center relative text-white">
                                     <img
                                         className="absolute z-10 h-[25rem] top-1/3 opacity-30"
-                                        src="https://i.ibb.co/BVKjsKR/anim3.gif"
+                                        src={imageAssets[5]}
                                         alt="frame"
                                     />
                                     <Fade cascade className="z-20">
@@ -580,8 +588,8 @@ const AnnoraRompas = () => {
                                         </div>
 
                                         <img
-                                            src="https://i.ibb.co/2czMvvQ/center-photo-2.png"
-                                            alt="photo"
+                                            src={imageAssets[6]}
+                                            alt="assets 6"
                                             className="h-72"
                                         />
 
@@ -672,7 +680,7 @@ const AnnoraRompas = () => {
                             <Fade cascade>
                                 <img
                                     className="absolute -z-10 bottom-1/3 opacity-30"
-                                    src="https://i.ibb.co/G5t4bwj/anim1.gif"
+                                    src={imageAssets[7]}
                                     alt="anim1"
                                 />
                                 <Wishes
@@ -731,7 +739,7 @@ const AnnoraRompas = () => {
 
                                 <img
                                     className="py-2 pt-4"
-                                    src="https://i.ibb.co/0B5VqzV/parent.jpg"
+                                    src={imageAssets[8]}
                                     alt="parents"
                                 />
 
