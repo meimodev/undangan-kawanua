@@ -109,23 +109,14 @@ const AnnoraRompas = () => {
     ];
 
     const imageAssets = [
-        // "https://i.ibb.co/FXYSmkV/divider.png",
       "https://ik.imagekit.io/zwwatezewlj/annora-rompas/divider.png?updatedAt=1702972782890",
-        // "https://i.ibb.co/4f8N62k/background.png",
       "https://ik.imagekit.io/zwwatezewlj/annora-rompas/background.png?updatedAt=1702972785823",
-        // "https://i.ibb.co/Ph0pNdq/opener-clean.png",
       "https://ik.imagekit.io/zwwatezewlj/annora-rompas/opener_clean.png?updatedAt=1702972792267",
-        // "https://i.ibb.co/C5Vq0G9/anim2.gif",
       "https://ik.imagekit.io/zwwatezewlj/annora-rompas/anim2.gif?updatedAt=1702972786664",
-        // "https://i.ibb.co/hgrVkX3/center-photo-1.png",
       "https://ik.imagekit.io/zwwatezewlj/annora-rompas/center-photo-1.png?updatedAt=1702972783102",
-        // "https://i.ibb.co/BVKjsKR/anim3.gif",
       "https://ik.imagekit.io/zwwatezewlj/annora-rompas/anim3.gif?updatedAt=1702972795184",
-        // "https://i.ibb.co/2czMvvQ/center-photo-2.png",
       "https://ik.imagekit.io/zwwatezewlj/annora-rompas/center-photo-2.png?updatedAt=1702972783159",
-        // "https://i.ibb.co/G5t4bwj/anim1.gif",
       "https://ik.imagekit.io/zwwatezewlj/annora-rompas/anim1.gif?updatedAt=1702972785677",
-        // "https://i.ibb.co/0B5VqzV/parent.jpg",
       "https://ik.imagekit.io/zwwatezewlj/annora-rompas/Photos/tinified/parent.jpg?updatedAt=1702972815457"
     ];
 
@@ -451,7 +442,7 @@ const AnnoraRompas = () => {
             <_BuildHead/>
             <div
                 style={secondaryFontFamily}
-                className={"cursor-default scroll-smooth bg-[url(" + imageAssets[1] + ")] bg-repeat-y bg-contain"}
+                className={`cursor-default scroll-smooth bg-[url(https://ik.imagekit.io/zwwatezewlj/annora-rompas/background.png?updatedAt=1702972785823)] bg-repeat-y bg-contain`}
             >
                 <OpenInvitation
                     onClickOpenInvitation={() => {
@@ -460,7 +451,7 @@ const AnnoraRompas = () => {
                     builder={({onClose}) => {
                         return (
                             <div
-                                className={"text-white h-screen flex flex-col justify-end items-center overflow-hidden bg-[url(" + imageAssets[2] + ")] bg-contain bg-center relative"}>
+                                className={`text-white h-screen flex flex-col justify-end items-center overflow-hidden bg-[url(https://ik.imagekit.io/zwwatezewlj/annora-rompas/opener_clean.png?updatedAt=1702972792267)] bg-contain bg-center relative`}>
 
                                 <div className="z-50 h-1/3 text-center">
 
